@@ -36,7 +36,7 @@ export default function Home() {
         />
                 {/* <div className="absolute -inset-1 bg-gradient-to-r from-[#014AAD] to-[#F54A4D] rounded-lg blur opacity-20 animate-pulse-slow"></div> */}
               </div>
-              <span className="hidden sm:block text-base text-gray-700 font-semibold">L'alerte qui sauve des vies</span>
+              <span className="hidden sm:block text-base text-gray-700 font-semibold">L&apos;alerte qui sauve des vies</span>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-2">
@@ -190,7 +190,7 @@ export default function Home() {
                     </div>
                     <p className="text-gray-600 leading-relaxed text-lg">
                       Sur le terrain, des capteurs intelligents sont installés dans les zones à haut risque (ponts, caniveaux, rivières). 
-                      Ces capteurs mesurent en continu le niveau d'eau, la pluviométrie et la vitesse d'écoulement.
+                      Ces capteurs mesurent en continu le niveau d&apos;eau, la pluviométrie et la vitesse d&apos;écoulement.
                     </p>
                   </div>
                   {/* Animation de données qui circulent */}
@@ -291,7 +291,7 @@ export default function Home() {
                   </div>
                   <p className="text-gray-600 leading-relaxed text-lg">
                     En parallèle, Alerti récupère les prévisions météorologiques de sources fiables. 
-                    À partir de ces deux sources (capteurs + météo), notre système calcule le niveau de risque d'inondation pour chaque quartier surveillé.
+                    À partir de ces deux sources (capteurs + météo), notre système calcule le niveau de risque d&apos;inondation pour chaque quartier surveillé.
                   </p>
                 </div>
                 {/* Animation de calcul */}
@@ -351,16 +351,16 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-gray-900">Alertes intelligentes</h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed text-lg mb-4">
-                    Lorsque les seuils critiques sont atteints ou qu'une forte pluie est prévue, le système déclenche automatiquement une alerte préventive.
+                    Lorsque les seuils critiques sont atteints ou qu&apos;une forte pluie est prévue, le système déclenche automatiquement une alerte préventive.
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center text-sm">
                       <div className="w-3 h-3 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
-                      <span className="text-gray-600"><strong>Risque modéré</strong> → SMS d'information</span>
+                      <span className="text-gray-600"><strong>Risque modéré</strong> → SMS d&apos;information</span>
                     </div>
                     <div className="flex items-center text-sm">
                       <div className="w-3 h-3 bg-red-500 rounded-full mr-3 animate-pulse"></div>
-                      <span className="text-gray-600"><strong>Risque élevé</strong> → SMS d'alerte urgente + notifications</span>
+                      <span className="text-gray-600"><strong>Risque élevé</strong> → SMS d&apos;alerte urgente + notifications</span>
                     </div>
                   </div>
                 </div>
@@ -546,7 +546,7 @@ export default function Home() {
               Application <span className="text-gradient">Mobile Alerti</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Découvrez l'application mobile Alerti qui permet aux utilisateurs de recevoir des alertes en temps réel et de visualiser les zones à risque.
+              Découvrez l&apos;application mobile Alerti qui permet aux utilisateurs de recevoir des alertes en temps réel et de visualiser les zones à risque.
             </p>
           </div>
 
@@ -588,7 +588,7 @@ export default function Home() {
                           <div className="w-full h-full overflow-hidden rounded-[1.8rem]">
           <Image
                               src={screenshot}
-                              alt={`Capture d'écran Alerti ${index + 1}`}
+                              alt={`Capture d&apos;écran Alerti ${index + 1}`}
                               width={280}
                               height={560}
                               className="w-full h-full object-cover rounded-[1.8rem]"
@@ -613,7 +613,7 @@ export default function Home() {
             <div className="text-center mt-8">
               <div className="flex items-center justify-center space-x-4">
                 <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse"></div>
-                <p className="text-gray-500 text-sm font-medium">← Faites défiler horizontalement pour voir toutes les captures d'écran →</p>
+                <p className="text-gray-500 text-sm font-medium">← Faites défiler horizontalement pour voir toutes les captures d&apos;écran →</p>
                 <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse"></div>
               </div>
             </div>
@@ -647,7 +647,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Données Temps Réel</h3>
-              <p className="text-gray-600">Informations météo et niveaux d'eau actuels</p>
+              <p className="text-gray-600">Informations météo et niveaux d&apos;eau actuels</p>
             </div>
           </div>
         </div>
@@ -676,14 +676,14 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-white mb-2">48h</div>
-              <div className="text-xl opacity-90">temps d'alerte moyen avant la crue</div>
+              <div className="text-xl opacity-90">temps d&apos;alerte moyen avant la crue</div>
             </div>
           </div>
 
           {/* Témoignage */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center max-w-4xl mx-auto">
             <blockquote className="text-xl italic mb-6">
-              "Parce qu'une information à temps peut sauver des vies. Alerti nous a permis d'évacuer notre quartier avant la dernière grande inondation. Merci à toute l'équipe !"
+              &quot;Parce qu&apos;une information à temps peut sauver des vies. Alerti nous a permis d&apos;évacuer notre quartier avant la dernière grande inondation. Merci à toute l&apos;équipe !&quot;
             </blockquote>
             <div className="text-lg font-semibold">Mariam Traoré</div>
             <div className="opacity-75">Habitante de Sebenikoro</div>
@@ -739,7 +739,7 @@ export default function Home() {
               },
               {
                 name: "Issa",
-                role: "L'électronicien",
+                role: "L&apos;électronicien",
                 icon: (
                   <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -895,7 +895,7 @@ export default function Home() {
                 {/* <div className="absolute -inset-2 bg-gradient-to-r from-[#014AAD]/20 to-[#00D4FF]/20 rounded-lg blur-lg"></div> */}
               </div>
             </div>
-            <p className="text-xl text-gray-300 mb-8 font-light">L'alerte qui sauve des vies</p>
+            <p className="text-xl text-gray-300 mb-8 font-light">L&apos;alerte qui sauve des vies</p>
             <div className="flex justify-center items-center space-x-4 mb-8">
               <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#014AAD]"></div>
               <span className="text-[#00D4FF] text-2xl">🇲🇱</span>
