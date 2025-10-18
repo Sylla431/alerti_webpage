@@ -374,7 +374,18 @@ export default function Home() {
           {/* Processus principal avec animations et flèches */}
           <div className="space-y-8">
               {/* Étape 1 - Capteurs */}
-              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className="relative order-1 lg:order-2">
+                  <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#014AAD]/20">
+                    <div className="text-center">
+                      <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.638 5.338a2.25 2.25 0 00-2.15-1.588H15M9 3.75v11.25m0 0h6m-6 0L12 15.75" />
+                        <circle cx="12" cy="12" r="3" className="animate-pulse" />
+                      </svg>
+                      <p className="text-gray-600 font-medium text-sm sm:text-base">Surveillance continue 24h/24</p>
+                    </div>
+                  </div>
+                </div>
                 <div className="relative order-2 lg:order-1">
                   <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover-lift border border-gray-100">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
@@ -390,17 +401,6 @@ export default function Home() {
                   </div>
                   {/* Animation de données qui circulent */}
                   <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#014AAD] to-transparent opacity-30 animate-data-flow"></div>
-                </div>
-                <div className="relative order-1 lg:order-2">
-                  <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#014AAD]/20">
-                    <div className="text-center">
-                      <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.638 5.338a2.25 2.25 0 00-2.15-1.588H15M9 3.75v11.25m0 0h6m-6 0L12 15.75" />
-                        <circle cx="12" cy="12" r="3" className="animate-pulse" />
-                      </svg>
-                      <p className="text-gray-600 font-medium text-sm sm:text-base">Surveillance continue 24h/24</p>
-                    </div>
-                  </div>
                 </div>
                 
                 {/* Flèche mobile */}
@@ -425,36 +425,36 @@ export default function Home() {
             </div>
 
             {/* Étape 2 - Transmission Cloud */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative order-2 lg:order-1">
-                <div className="bg-gradient-to-br from-[#00D4FF]/10 to-[#8B5CF6]/10 rounded-3xl p-8 border border-[#00D4FF]/20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="relative order-1 lg:order-2">
+                <div className="bg-gradient-to-br from-[#00D4FF]/10 to-[#8B5CF6]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#00D4FF]/20">
                   <div className="text-center">
-                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    <p className="text-gray-600 font-medium">Transmission instantanée</p>
+                    <p className="text-gray-600 font-medium text-sm sm:text-base">Transmission instantanée</p>
                   </div>
                 </div>
               </div>
-              <div className="relative order-1 lg:order-2">
-                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-gradient-to-br from-[#00D4FF] to-[#8B5CF6] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '1s'}}>
-                      <span className="text-white font-bold text-xl">2️⃣</span>
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-br from-[#00D4FF] to-[#8B5CF6] rounded-xl sm:rounded-2xl w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg mb-3 sm:mb-0 sm:mr-4 animate-pulse-rotate" style={{animationDelay: '1s'}}>
+                      <span className="text-white font-bold text-lg sm:text-xl">2️⃣</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Transmission Cloud AWS</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Transmission Cloud AWS</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg">
                     Les données collectées sont transmises en temps réel vers notre plateforme cloud (hébergée sur AWS), 
                     où elles sont analysées automatiquement.
                   </p>
                 </div>
                 {/* Animation de flux de données */}
-                <div className="absolute top-8 right-8 w-full h-2 bg-gradient-to-l from-transparent via-[#00D4FF] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '1s'}}></div>
+                <div className="absolute top-4 sm:top-8 right-4 sm:right-8 w-full h-2 bg-gradient-to-l from-transparent via-[#00D4FF] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '1s'}}></div>
               </div>
               
               {/* Flèche mobile */}
-              <div className="lg:hidden flex justify-center my-8 col-span-2">
+              <div className="lg:hidden flex justify-center my-8 ">
                 <svg className="w-8 h-16 text-[#00D4FF]/40" fill="currentColor" viewBox="0 0 50 100">
                   <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '1s'}} />
                 </svg>
@@ -475,36 +475,36 @@ export default function Home() {
             </div>
 
             {/* Étape 3 - Analyse & Prévisions */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-gradient-to-br from-[#8B5CF6] to-[#F54A4D] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '2s'}}>
-                      <span className="text-white font-bold text-xl">3️⃣</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Analyse & Prévisions</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="relative order-1 lg:order-2">
+                <div className="bg-gradient-to-br from-[#8B5CF6]/10 to-[#F54A4D]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#8B5CF6]/20">
+                  <div className="text-center">
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                    <p className="text-gray-600 font-medium text-sm sm:text-base">Intelligence artificielle</p>
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                </div>
+              </div>
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-br from-[#8B5CF6] to-[#F54A4D] rounded-xl sm:rounded-2xl w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg mb-3 sm:mb-0 sm:mr-4 animate-pulse-rotate" style={{animationDelay: '2s'}}>
+                      <span className="text-white font-bold text-lg sm:text-xl">3️⃣</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Analyse & Prévisions</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg">
                     En parallèle, Alerti récupère les prévisions météorologiques de sources fiables. 
                     À partir de ces deux sources (capteurs + météo), notre système calcule le niveau de risque d&apos;inondation pour chaque quartier surveillé.
                   </p>
                 </div>
                 {/* Animation de calcul */}
-                <div className="absolute top-8 left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '2s'}}></div>
-              </div>
-              <div className="relative">
-                <div className="bg-gradient-to-br from-[#8B5CF6]/10 to-[#F54A4D]/10 rounded-3xl p-8 border border-[#8B5CF6]/20">
-                  <div className="text-center">
-                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                    <p className="text-gray-600 font-medium">Intelligence artificielle</p>
-                  </div>
-                </div>
+                <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '2s'}}></div>
               </div>
               
               {/* Flèche mobile */}
-              <div className="lg:hidden flex justify-center my-8 col-span-2">
+              <div className="lg:hidden flex justify-center my-8 ">
                 <svg className="w-8 h-16 text-[#8B5CF6]/40" fill="currentColor" viewBox="0 0 50 100">
                   <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '2s'}} />
                 </svg>
@@ -525,46 +525,46 @@ export default function Home() {
             </div>
 
             {/* Étape 4 - Alertes */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative order-2 lg:order-1">
-                <div className="bg-gradient-to-br from-[#F54A4D]/10 to-[#014AAD]/10 rounded-3xl p-8 border border-[#F54A4D]/20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="relative order-1 lg:order-2">
+                <div className="bg-gradient-to-br from-[#F54A4D]/10 to-[#014AAD]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#F54A4D]/20">
                   <div className="text-center">
-                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
                       <circle cx="12" cy="12" r="3" className="animate-pulse fill-[#F54A4D]" />
                     </svg>
-                    <p className="text-gray-600 font-medium">Alertes automatiques</p>
+                    <p className="text-gray-600 font-medium text-sm sm:text-base">Alertes automatiques</p>
                   </div>
                 </div>
               </div>
-              <div className="relative order-1 lg:order-2">
-                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-gradient-to-br from-[#F54A4D] to-[#014AAD] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '3s'}}>
-                      <span className="text-white font-bold text-xl">4️⃣</span>
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-br from-[#F54A4D] to-[#014AAD] rounded-xl sm:rounded-2xl w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg mb-3 sm:mb-0 sm:mr-4 animate-pulse-rotate" style={{animationDelay: '3s'}}>
+                      <span className="text-white font-bold text-lg sm:text-xl">4️⃣</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Alertes intelligentes</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Alertes intelligentes</h3>
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-lg mb-4">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg mb-4">
                     Lorsque les seuils critiques sont atteints ou qu&apos;une forte pluie est prévue, le système déclenche automatiquement une alerte préventive.
                   </p>
                   <div className="space-y-3">
-                    <div className="flex items-center text-sm">
+                    <div className="flex items-center text-xs sm:text-sm">
                       <div className="w-3 h-3 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
                       <span className="text-gray-600"><strong>Risque modéré</strong> → SMS d&apos;information</span>
                     </div>
-                    <div className="flex items-center text-sm">
+                    <div className="flex items-center text-xs sm:text-sm">
                       <div className="w-3 h-3 bg-red-500 rounded-full mr-3 animate-pulse"></div>
                       <span className="text-gray-600"><strong>Risque élevé</strong> → SMS d&apos;alerte urgente + notifications</span>
                     </div>
                   </div>
                 </div>
                 {/* Animation d'alerte */}
-                <div className="absolute top-8 right-8 w-full h-2 bg-gradient-to-l from-transparent via-[#F54A4D] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '3s'}}></div>
+                <div className="absolute top-4 sm:top-8 right-4 sm:right-8 w-full h-2 bg-gradient-to-l from-transparent via-[#F54A4D] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '3s'}}></div>
               </div>
               
               {/* Flèche mobile */}
-              <div className="lg:hidden flex justify-center my-8 col-span-2">
+              <div className="lg:hidden flex justify-center my-8 ">
                 <svg className="w-8 h-16 text-[#F54A4D]/40" fill="currentColor" viewBox="0 0 50 100">
                   <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '3s'}} />
                 </svg>
@@ -585,42 +585,42 @@ export default function Home() {
             </div>
 
             {/* Étape 5 - Interface */}
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="relative">
-                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '4s'}}>
-                      <span className="text-white font-bold text-xl">5️⃣</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Interface Web & Mobile</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              <div className="relative order-1 lg:order-2">
+                <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#014AAD]/20">
+                  <div className="text-center">
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M15 14v3.5a2.25 2.25 0 01-2.25 2.25h-1.5A2.25 2.25 0 019 17.8v-3.5m0 0H4.5m5.25 0v-3.5M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L4.5 14m0 0l-1.5-1.5m1.5 1.5l1.5-1.5" />
+                    </svg>
+                    <p className="text-gray-600 font-medium text-sm sm:text-base">Dashboard interactif</p>
                   </div>
-                  <div className="space-y-4">
-                    <div className="bg-blue-50 rounded-xl p-4">
-                      <h4 className="font-semibold text-[#014AAD] mb-2">👤 Utilisateur</h4>
-                      <p className="text-gray-600 text-sm">Carte des capteurs, alertes en cours, conseils de prévention</p>
+                </div>
+              </div>
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-xl sm:rounded-2xl w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg mb-3 sm:mb-0 sm:mr-4 animate-pulse-rotate" style={{animationDelay: '4s'}}>
+                      <span className="text-white font-bold text-lg sm:text-xl">5️⃣</span>
                     </div>
-                    <div className="bg-purple-50 rounded-xl p-4">
-                      <h4 className="font-semibold text-[#8B5CF6] mb-2">⚙️ Administrateur</h4>
-                      <p className="text-gray-600 text-sm">Statistiques, historique, ajustement des seuils</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Interface Web & Mobile</h3>
+                  </div>
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="bg-blue-50 rounded-xl p-3 sm:p-4">
+                      <h4 className="font-semibold text-[#014AAD] mb-2 text-sm sm:text-base">👤 Utilisateur</h4>
+                      <p className="text-gray-600 text-xs sm:text-sm">Carte des capteurs, alertes en cours, conseils de prévention</p>
+                    </div>
+                    <div className="bg-purple-50 rounded-xl p-3 sm:p-4">
+                      <h4 className="font-semibold text-[#8B5CF6] mb-2 text-sm sm:text-base">⚙️ Administrateur</h4>
+                      <p className="text-gray-600 text-xs sm:text-sm">Statistiques, historique, ajustement des seuils</p>
                     </div>
                   </div>
                 </div>
                 {/* Animation finale */}
-                <div className="absolute top-8 left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#014AAD] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '4s'}}></div>
-              </div>
-              <div className="relative">
-                <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-3xl p-8 border border-[#014AAD]/20">
-                  <div className="text-center">
-                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M15 14v3.5a2.25 2.25 0 01-2.25 2.25h-1.5A2.25 2.25 0 019 17.8v-3.5m0 0H4.5m5.25 0v-3.5M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L4.5 14m0 0l-1.5-1.5m1.5 1.5l1.5-1.5" />
-                    </svg>
-                    <p className="text-gray-600 font-medium">Dashboard interactif</p>
-                  </div>
-                </div>
+                <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#014AAD] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '4s'}}></div>
               </div>
               
               {/* Flèche mobile finale */}
-              <div className="lg:hidden flex justify-center my-8 col-span-2">
+              <div className="lg:hidden flex justify-center my-8 ">
                 <svg className="w-8 h-16 text-[#014AAD]/40" fill="currentColor" viewBox="0 0 50 100">
                   <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '4s'}} />
                 </svg>
