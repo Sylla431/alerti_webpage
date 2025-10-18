@@ -259,3 +259,19 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Animation pour l'apparition du contenu après chargement */
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-loaded {
+  animation: contentFadeIn 0.8s ease-out forwards;
+}

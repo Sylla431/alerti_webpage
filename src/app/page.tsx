@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,8 +57,116 @@ export default function Home() {
     }
   };
 
+  // Effet pour attendre que tout soit chargé
+  useEffect(() => {
+    const loadAllResources = async () => {
+      try {
+        // Attendre que le DOM soit complètement chargé
+        if (document.readyState !== 'complete') {
+          await new Promise(resolve => {
+            window.addEventListener('load', resolve, { once: true });
+          });
+        }
+
+        // Attendre que les polices soient chargées
+        await document.fonts.ready;
+
+        // Attendre que toutes les images critiques soient chargées
+        const criticalImages = ['/logo_long.png', '/icone_background.png'];
+        const imagePromises = criticalImages.map((src) => {
+          return new Promise<void>((resolve) => {
+            const img = new window.Image();
+            img.onload = () => resolve();
+            img.onerror = () => resolve(); // Continue même si une image échoue
+            img.src = src;
+          });
+        });
+
+        // Attendre un délai minimum pour s'assurer que tout est prêt
+        const minLoadTime = new Promise(resolve => setTimeout(resolve, 2000));
+
+        // Attendre que toutes les promesses se résolvent
+        await Promise.all([...imagePromises, minLoadTime]);
+
+        // Attendre que les styles CSS soient appliqués et que les animations soient prêtes
+        await new Promise(resolve => {
+          // Forcer un reflow pour s'assurer que les styles sont appliqués
+          document.body.offsetHeight;
+          setTimeout(resolve, 800);
+        });
+        
+        // Transition fluide vers le contenu
+        setIsLoaded(true);
+      } catch (error) {
+        console.log('Erreur lors du chargement:', error);
+        // Charger quand même après un délai minimum
+        setTimeout(() => setIsLoaded(true), 3000);
+      }
+    };
+
+    loadAllResources();
+  }, []);
+
+  // Écran de chargement
+  if (!isLoaded) {
+    return (
+      <div className="fixed inset-0 bg-gradient-to-br from-[#014AAD] via-[#8B5CF6] to-[#F54A4D] flex items-center justify-center z-50">
+        {/* Effet de particules en arrière-plan */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-white/30 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            ></div>
+          ))}
+        </div>
+        
+        <div className="text-center relative z-10">
+          {/* Logo de chargement */}
+          <div className="mb-8 animate-fade-in-up">
+            <Image
+              src="/logo_long.png"
+              alt="Alerti Logo"
+              width={300}
+              height={80}
+              className="h-20 w-auto object-cover mx-auto drop-shadow-lg"
+              priority
+            />
+          </div>
+          
+          {/* Spinner moderne avec effet de glow */}
+          <div className="relative mb-8 animate-fade-in-up">
+            <div className="w-20 h-20 border-4 border-white/20 border-t-white rounded-full animate-spin mx-auto shadow-lg"></div>
+            <div className="absolute inset-0 w-20 h-20 border-4 border-transparent border-t-white/50 rounded-full animate-spin mx-auto"></div>
+          </div>
+          
+          {/* Texte de chargement */}
+          <div className="text-white text-xl font-semibold mb-3 animate-fade-in-up">
+            Chargement d&apos;Alerti...
+          </div>
+          <div className="text-white/80 text-sm max-w-sm mx-auto animate-fade-in-up">
+            Préparation de l&apos;expérience complète avec animations et ressources
+          </div>
+          
+          {/* Barre de progression animée */}
+          <div className="w-72 h-2 bg-white/20 rounded-full mx-auto mt-8 overflow-hidden animate-fade-in-up">
+            <div className="h-full bg-gradient-to-r from-white/60 via-white to-white/60 rounded-full animate-pulse" style={{
+              animation: 'shimmer 2s ease-in-out infinite'
+            }}></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white content-loaded">
       {/* Navigation moderne */}
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
