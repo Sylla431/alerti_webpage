@@ -22,12 +22,37 @@ export default function Home() {
     const element = document.getElementById(elementId);
     if (element) {
       const navHeight = 96; // Hauteur de la navigation fixe (h-24 = 96px)
-      const elementPosition = element.offsetTop - navHeight;
+      let elementPosition = element.offsetTop - navHeight;
       
-      window.scrollTo({
-        top: elementPosition,
-        behavior: 'smooth'
-      });
+      // Ajustement spécial pour la section comment-ca-marche pour une meilleure transition
+      if (elementId === 'comment-ca-marche') {
+        elementPosition = elementPosition - 20; // Réduire l'offset pour une transition plus naturelle
+      }
+      
+      // Utiliser requestAnimationFrame pour une animation plus fluide
+      const startPosition = window.pageYOffset;
+      const distance = elementPosition - startPosition;
+      const duration = 800; // Durée de l'animation en ms
+      let startTime: number | null = null;
+
+      const animation = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        // Easing function pour une transition plus naturelle
+        const ease = progress < 0.5 
+          ? 2 * progress * progress 
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        window.scrollTo(0, startPosition + distance * ease);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animation);
+        }
+      };
+      
+      requestAnimationFrame(animation);
     }
   };
 
@@ -168,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Section Comment ça marche */}
-      <section id="comment-ca-marche" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+      <section id="comment-ca-marche" className="pt-24 pb-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden transform transition-all duration-500 ease-in-out">
         {/* Éléments décoratifs animés */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200/20 rounded-full animate-float"></div>
