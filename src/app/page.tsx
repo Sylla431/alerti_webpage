@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +23,9 @@ export default function Home() {
   const smoothScrollTo = (elementId: string) => {
     const element = document.getElementById(elementId);
     if (element) {
-      const navHeight = 96; // Hauteur de la navigation fixe (h-24 = 96px)
+      // Calculer la hauteur de navigation responsive
+      const navElement = document.querySelector('nav');
+      const navHeight = navElement ? navElement.offsetHeight : (window.innerWidth < 640 ? 64 : window.innerWidth < 1024 ? 80 : 96);
       let elementPosition = element.offsetTop - navHeight;
       
       // Ajustement spécial pour la section comment-ca-marche pour une meilleure transition
@@ -170,46 +173,80 @@ export default function Home() {
       {/* Navigation moderne */}
       <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-24">
-            <div className="flex items-center space-x-4">
+          <div className="flex justify-between items-center h-16 sm:h-20 lg:h-24">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="relative">
-        <Image
+                <Image
                   src="/logo_long.png"
                   alt="Alerti Logo"
                   width={400}
                   height={90}
-                  className="h-32 w-auto object-cover"
-          priority
-        />
-                {/* <div className="absolute -inset-1 bg-gradient-to-r from-[#014AAD] to-[#F54A4D] rounded-lg blur opacity-20 animate-pulse-slow"></div> */}
+                  className="h-8 sm:h-12 lg:h-16 w-auto object-cover"
+                  priority
+                />
               </div>
-              <span className="hidden sm:block text-base text-gray-700 font-semibold">L&apos;alerte qui sauve des vies</span>
+              <span className="hidden lg:block text-sm lg:text-base text-gray-700 font-semibold">L&apos;alerte qui sauve des vies</span>
             </div>
-            <div className="hidden md:block">
+            
+            {/* Menu desktop */}
+            <div className="hidden lg:block">
               <div className="ml-10 flex items-center space-x-2">
-                <button onClick={() => smoothScrollTo('comment-ca-marche')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('comment-ca-marche')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Comment ça marche</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('fonctionnalites')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('fonctionnalites')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Fonctionnalités</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('application')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('application')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Application</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('impact')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('impact')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Impact</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('contact')} className="relative bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white px-8 py-3 rounded-full text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                <button onClick={() => smoothScrollTo('contact')} className="relative bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white px-4 lg:px-8 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                   <span className="relative z-10">Contact</span>
                   <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
+
+            {/* Bouton menu mobile */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-[#014AAD] hover:bg-gray-100 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              </svg>
+            </button>
           </div>
+
+          {/* Menu mobile */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <button onClick={() => {smoothScrollTo('comment-ca-marche'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                  Comment ça marche
+                </button>
+                <button onClick={() => {smoothScrollTo('fonctionnalites'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                  Fonctionnalités
+                </button>
+                <button onClick={() => {smoothScrollTo('application'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                  Application
+                </button>
+                <button onClick={() => {smoothScrollTo('impact'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                  Impact
+                </button>
+                <button onClick={() => {smoothScrollTo('contact'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white hover:shadow-lg transition-all duration-300">
+                  Contact
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -257,36 +294,36 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="animate-fade-in-up">
-            <div className="relative mb-8">
-              <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight relative">
+            <div className="relative mb-6 sm:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight relative">
                 <span className="relative z-10">Ensemble, anticipons</span>
                 <div className="absolute -inset-2 bg-gradient-to-r from-white/20 to-transparent rounded-xl blur-lg"></div>
               </h1>
-              <h2 className="text-4xl md:text-6xl font-bold text-white relative">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white relative">
                 <span className="text-gradient bg-gradient-to-r from-[#00D4FF] to-[#8B5CF6] bg-clip-text text-transparent animate-shimmer">
                   les inondations
                 </span>
               </h2>
             </div>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto font-light leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-4xl mx-auto font-light leading-relaxed px-4">
               Imaginez un Mali où chaque pluie ne serait plus une menace, mais une <span className="text-[#00D4FF] font-semibold">information utile</span>.
             </p>
-            <p className="text-lg text-white/80 mb-12 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base lg:text-lg text-white/80 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
               Grâce à Alerti, les habitants des zones à risque reçoivent une alerte <span className="font-bold text-white">1 à 2 jours</span> avant une inondation prévue.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
               <button
                 onClick={() => smoothScrollTo('comment-ca-marche')}
-                className="group relative bg-gradient-to-r from-[#F54A4D] to-[#8B5CF6] text-white font-semibold py-5 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#F54A4D]/30"
+                className="group relative bg-gradient-to-r from-[#F54A4D] to-[#8B5CF6] text-white font-semibold py-3 sm:py-4 lg:py-5 px-6 sm:px-8 lg:px-10 rounded-full text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#F54A4D]/30 w-full sm:w-auto"
               >
                 <span className="relative z-10">Découvrir Alerti</span>
                 <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
           </button>
           <button
                 onClick={() => smoothScrollTo('fonctionnalites')}
-                className="group relative glass-morphism text-white font-semibold py-5 px-10 rounded-full text-lg border border-white/30 transition-all duration-300 hover:scale-105"
+                className="group relative glass-morphism text-white font-semibold py-3 sm:py-4 lg:py-5 px-6 sm:px-8 lg:px-10 rounded-full text-sm sm:text-base lg:text-lg border border-white/30 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               >
                 <span className="relative z-10">Voir comment ça marche</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/20 to-[#00D4FF]/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
@@ -322,14 +359,14 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-fade-in-up px-4">
               Comment ça marche
             </h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-4">
+            <p className="text-lg sm:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-3 sm:mb-4 px-4">
               Chez Alerti, nous croyons qu&apos;<span className="font-bold text-[#014AAD]">une information reçue à temps peut sauver des vies</span>.
             </p>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
               Notre système fonctionne de manière simple, entièrement automatisée et adaptée aux réalités locales.
             </p>
           </div>
@@ -337,31 +374,31 @@ export default function Home() {
           {/* Processus principal avec animations et flèches */}
           <div className="space-y-8">
               {/* Étape 1 - Capteurs */}
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="relative">
-                  <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
-                    <div className="flex items-center mb-6">
-                      <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate">
-                        <span className="text-white font-bold text-xl">1️⃣</span>
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className="relative order-2 lg:order-1">
+                  <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl hover-lift border border-gray-100">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
+                      <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-xl sm:rounded-2xl w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center shadow-lg mb-3 sm:mb-0 sm:mr-4 animate-pulse-rotate">
+                        <span className="text-white font-bold text-lg sm:text-xl">1️⃣</span>
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900">Capteurs intelligents</h3>
+                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Capteurs intelligents</h3>
                     </div>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base lg:text-lg">
                       Sur le terrain, des capteurs intelligents sont installés dans les zones à haut risque (ponts, caniveaux, rivières). 
                       Ces capteurs mesurent en continu le niveau d&apos;eau, la pluviométrie et la vitesse d&apos;écoulement.
                     </p>
                   </div>
                   {/* Animation de données qui circulent */}
-                  <div className="absolute top-8 left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#014AAD] to-transparent opacity-30 animate-data-flow"></div>
+                  <div className="absolute top-4 sm:top-8 left-4 sm:left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#014AAD] to-transparent opacity-30 animate-data-flow"></div>
                 </div>
-                <div className="relative">
-                  <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-3xl p-8 border border-[#014AAD]/20">
+                <div className="relative order-1 lg:order-2">
+                  <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#014AAD]/20">
                     <div className="text-center">
-                      <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.638 5.338a2.25 2.25 0 00-2.15-1.588H15M9 3.75v11.25m0 0h6m-6 0L12 15.75" />
                         <circle cx="12" cy="12" r="3" className="animate-pulse" />
                       </svg>
-                      <p className="text-gray-600 font-medium">Surveillance continue 24h/24</p>
+                      <p className="text-gray-600 font-medium text-sm sm:text-base">Surveillance continue 24h/24</p>
                     </div>
                   </div>
                 </div>
@@ -697,20 +734,20 @@ export default function Home() {
       </section>
 
       {/* Section Application Mobile */}
-      <section id="application" className="py-20 bg-white relative">
+      <section id="application" className="py-12 sm:py-16 lg:py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
               Application <span className="text-gradient">Mobile Alerti</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Découvrez l&apos;application mobile Alerti qui permet aux utilisateurs de recevoir des alertes en temps réel et de visualiser les zones à risque.
             </p>
           </div>
 
           {/* Carousel des captures d'écran dans des frames iPhone */}
-          <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
-            <div className="flex overflow-x-auto space-x-4 pb-8 snap-x snap-mandatory scrollbar-hide px-8 py-4">
+          <div className="relative overflow-hidden -mx-2 sm:-mx-4 lg:-mx-8">
+            <div className="flex overflow-x-auto space-x-3 sm:space-x-4 pb-6 sm:pb-8 snap-x snap-mandatory scrollbar-hide px-4 sm:px-8 py-4">
               {[
                 '/app_screens/Screenshot_20251017_141057.jpg',
                 '/app_screens/Screenshot_20251017_141339.jpg',
@@ -727,11 +764,11 @@ export default function Home() {
                 '/app_screens/Screenshot_20251017_211457.jpg',
                 '/app_screens/Screenshot_20251017_211628.jpg'
               ].map((screenshot, index) => (
-                <div key={index} className="flex-shrink-0 snap-center group px-2">
+                <div key={index} className="flex-shrink-0 snap-center group px-1 sm:px-2">
                   {/* Container avec ombre externe */}
-                  <div className="drop-shadow-2xl">
+                  <div className="drop-shadow-xl sm:drop-shadow-2xl">
                     {/* Frame iPhone */}
-                    <div className="relative w-72 h-[600px] mx-auto transform group-hover:scale-105 transition-transform duration-300 overflow-hidden rounded-[2.5rem]">
+                    <div className="relative w-56 sm:w-64 lg:w-72 h-[500px] sm:h-[550px] lg:h-[600px] mx-auto transform group-hover:scale-105 transition-transform duration-300 overflow-hidden rounded-[2rem] sm:rounded-[2.5rem]">
                     {/* iPhone Frame */}
                     <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2.5rem] p-3 shadow-2xl overflow-hidden">
                       {/* Bordure intérieure */}
@@ -768,11 +805,11 @@ export default function Home() {
             </div>
 
             {/* Indicateur de scroll */}
-            <div className="text-center mt-8">
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse"></div>
-                <p className="text-gray-500 text-sm font-medium">← Faites défiler horizontalement pour voir toutes les captures d&apos;écran →</p>
-                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse"></div>
+            <div className="text-center mt-6 sm:mt-8">
+              <div className="flex items-center justify-center space-x-2 sm:space-x-4 px-4">
+                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse hidden sm:block"></div>
+                <p className="text-gray-500 text-xs sm:text-sm font-medium text-center">← Faites défiler horizontalement pour voir toutes les captures d&apos;écran →</p>
+                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse hidden sm:block"></div>
               </div>
             </div>
           </div>
@@ -1037,29 +1074,28 @@ export default function Home() {
       </section>
 
       {/* Footer moderne */}
-      <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 overflow-hidden">
+      <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-12 sm:py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#00D4FF]/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="relative inline-block mb-8">
+            <div className="relative inline-block mb-6 sm:mb-8">
               <div className="relative">
           <Image
                   src="/logo_long.png"
                   alt="Alerti Logo"
                   width={500}
                   height={50}
-                  className="h-50 w-auto object-cover mx-auto"
+                  className="h-32 sm:h-40 lg:h-50 w-auto object-cover mx-auto"
                 />
-                {/* <div className="absolute -inset-2 bg-gradient-to-r from-[#014AAD]/20 to-[#00D4FF]/20 rounded-lg blur-lg"></div> */}
               </div>
             </div>
-            <p className="text-xl text-gray-300 mb-8 font-light">L&apos;alerte qui sauve des vies</p>
-            <div className="flex justify-center items-center space-x-4 mb-8">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#014AAD]"></div>
-              <span className="text-[#00D4FF] text-2xl">🇲🇱</span>
-              <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#014AAD]"></div>
+            <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-light px-4">L&apos;alerte qui sauve des vies</p>
+            <div className="flex justify-center items-center space-x-3 sm:space-x-4 mb-6 sm:mb-8">
+              <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent to-[#014AAD]"></div>
+              <span className="text-[#00D4FF] text-xl sm:text-2xl">🇲🇱</span>
+              <div className="w-8 sm:w-12 h-px bg-gradient-to-l from-transparent to-[#014AAD]"></div>
             </div>
-            <div className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto">
+            <div className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto px-4">
               © 2024 Alerti. Tous droits réservés. | Prévention des inondations au Mali<br />
               <span className="text-gray-500">Innovation technologique au service de la sécurité publique</span>
             </div>
