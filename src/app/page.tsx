@@ -214,41 +214,43 @@ export default function Home() {
       </nav>
 
       {/* Section Héros moderne */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Fond moderne avec mesh gradient */}
-        <div className="absolute inset-0 gradient-mesh animate-gradient">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden hero-section">
+        {/* Fond moderne avec mesh gradient - animation réduite */}
+        <div className="absolute inset-0 gradient-mesh" style={{animation: 'gradientShift 6s ease infinite'}}>
           <div className="absolute inset-0">
             <Image
               src="/icone_background.png"
               alt="Alerti Background"
               fill
-              className="object-cover opacity-20"
+              className="object-cover opacity-20 transition-opacity duration-500"
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-black/40"></div>
-          {/* Effet de particules flottantes */}
+          <div className="absolute inset-0 bg-black/40 transition-opacity duration-500"></div>
+          {/* Effet de particules flottantes - réduit et optimisé */}
           <div className="absolute inset-0">
-            {[...Array(30)].map((_, i) => (
+            {[...Array(15)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-white/20 rounded-full animate-float"
+                className="absolute w-2 h-2 bg-white/20 rounded-full"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${3 + Math.random() * 4}s`
+                  animation: `float ${4 + Math.random() * 2}s ease-in-out infinite`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  willChange: 'transform'
                 }}
               ></div>
             ))}
-            {[...Array(20)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <div
                 key={`rain-${i}`}
-                className="absolute w-0.5 h-12 bg-gradient-to-b from-white/40 to-transparent animate-pulse-slow"
+                className="absolute w-0.5 h-12 bg-gradient-to-b from-white/40 to-transparent"
                 style={{
                   left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${1 + Math.random() * 2}s`
+                  animation: `pulse ${2 + Math.random() * 1.5}s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
+                  animationDelay: `${Math.random() * 2}s`,
+                  willChange: 'opacity'
                 }}
               ></div>
             ))}
@@ -300,12 +302,18 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Transition fluide vers la section suivante */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 via-gray-50/50 to-transparent pointer-events-none"></div>
+        {/* Transition progressive vers la section suivante - optimisée */}
+        {/* <div 
+          className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to top, rgba(249, 250, 251, 0.95), rgba(249, 250, 251, 0.7), transparent)',
+            transition: 'opacity 0.3s ease'
+          }}
+        ></div> */}
       </section>
 
       {/* Section Comment ça marche */}
-      <section id="comment-ca-marche" className="pt-20 pb-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+      <section id="comment-ca-marche" className="pt-16 pb-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
         {/* Éléments décoratifs animés */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200/20 rounded-full animate-float"></div>

@@ -275,3 +275,20 @@ body {
 .content-loaded {
   animation: contentFadeIn 0.8s ease-out forwards;
 }
+
+/* Optimisations pour les performances de scroll */
+.hero-section {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animation optimisée pour les particules */
+.optimized-float {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.optimized-pulse {
+  will-change: opacity;
+}
