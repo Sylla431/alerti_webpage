@@ -169,7 +169,7 @@ export default function Home() {
               Comment ça marche
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-4">
-              Chez Alerti, nous croyons qu'<span className="font-bold text-[#014AAD]">une information reçue à temps peut sauver des vies</span>.
+              Chez Alerti, nous croyons qu&apos;<span className="font-bold text-[#014AAD]">une information reçue à temps peut sauver des vies</span>.
             </p>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Notre système fonctionne de manière simple, entièrement automatisée et adaptée aux réalités locales.
