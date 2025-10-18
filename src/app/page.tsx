@@ -27,7 +27,7 @@ export default function Home() {
       
       // Ajustement spécial pour la section comment-ca-marche pour une meilleure transition
       if (elementId === 'comment-ca-marche') {
-        elementPosition = elementPosition - 20; // Réduire l'offset pour une transition plus naturelle
+        elementPosition = elementPosition - 40; // Ajuster l'offset pour une transition plus fluide
       }
       
       // Utiliser requestAnimationFrame pour une animation plus fluide
@@ -299,10 +299,13 @@ export default function Home() {
             <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
+        
+        {/* Transition fluide vers la section suivante */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 via-gray-50/50 to-transparent pointer-events-none"></div>
       </section>
 
       {/* Section Comment ça marche */}
-      <section id="comment-ca-marche" className="pt-24 pb-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden transform transition-all duration-500 ease-in-out">
+      <section id="comment-ca-marche" className="pt-20 pb-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
         {/* Éléments décoratifs animés */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200/20 rounded-full animate-float"></div>
