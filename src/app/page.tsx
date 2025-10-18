@@ -1,102 +1,927 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Ici vous pourrez connecter avec votre backend Laravel ou Amazon SES
+    console.log('Form submitted:', formData);
+    alert('Merci pour votre message ! Nous vous répondrons rapidement.');
+    setFormData({ name: '', email: '', message: '' });
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="min-h-screen bg-white">
+      {/* Navigation moderne */}
+      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-24">
+            <div className="flex items-center space-x-4">
+              <div className="relative">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+                  src="/logo_long.png"
+                  alt="Alerti Logo"
+                  width={400}
+                  height={90}
+                  className="h-32 w-auto object-cover"
           priority
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                {/* <div className="absolute -inset-1 bg-gradient-to-r from-[#014AAD] to-[#F54A4D] rounded-lg blur opacity-20 animate-pulse-slow"></div> */}
+              </div>
+              <span className="hidden sm:block text-base text-gray-700 font-semibold">L'alerte qui sauve des vies</span>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-center space-x-2">
+                <a href="#comment-ca-marche" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                  <span className="relative z-10">Comment ça marche</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a href="#fonctionnalites" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                  <span className="relative z-10">Fonctionnalités</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a href="#application" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                  <span className="relative z-10">Application</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a href="#impact" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                  <span className="relative z-10">Impact</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                <a href="#contact" className="relative bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white px-8 py-3 rounded-full text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                  <span className="relative z-10">Contact</span>
+                  <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </nav>
+
+      {/* Section Héros moderne */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Fond moderne avec mesh gradient */}
+        <div className="absolute inset-0 gradient-mesh animate-gradient">
+          <div className="absolute inset-0">
+            <Image
+              src="/icone_background.png"
+              alt="Alerti Background"
+              fill
+              className="object-cover opacity-20"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Effet de particules flottantes */}
+          <div className="absolute inset-0">
+            {[...Array(30)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-2 h-2 bg-white/20 rounded-full animate-float"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                  animationDuration: `${3 + Math.random() * 4}s`
+                }}
+              ></div>
+            ))}
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={`rain-${i}`}
+                className="absolute w-0.5 h-12 bg-gradient-to-b from-white/40 to-transparent animate-pulse-slow"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${1 + Math.random() * 2}s`
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+          <div className="animate-fade-in-up">
+            <div className="relative mb-8">
+              <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 leading-tight relative">
+                <span className="relative z-10">Ensemble, anticipons</span>
+                <div className="absolute -inset-2 bg-gradient-to-r from-white/20 to-transparent rounded-xl blur-lg"></div>
+              </h1>
+              <h2 className="text-4xl md:text-6xl font-bold text-white relative">
+                <span className="text-gradient bg-gradient-to-r from-[#00D4FF] to-[#8B5CF6] bg-clip-text text-transparent animate-shimmer">
+                  les inondations
+                </span>
+              </h2>
+            </div>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto font-light leading-relaxed">
+              Imaginez un Mali où chaque pluie ne serait plus une menace, mais une <span className="text-[#00D4FF] font-semibold">information utile</span>.
+            </p>
+            <p className="text-lg text-white/80 mb-12 max-w-3xl mx-auto">
+              Grâce à Alerti, les habitants des zones à risque reçoivent une alerte <span className="font-bold text-white">1 à 2 jours</span> avant une inondation prévue.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a
+                href="#comment-ca-marche"
+                className="group relative bg-gradient-to-r from-[#F54A4D] to-[#8B5CF6] text-white font-semibold py-5 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#F54A4D]/30"
+              >
+                <span className="relative z-10">Découvrir Alerti</span>
+                <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+          </a>
+          <a
+                href="#fonctionnalites"
+                className="group relative glass-morphism text-white font-semibold py-5 px-10 rounded-full text-lg border border-white/30 transition-all duration-300 hover:scale-105"
+              >
+                <span className="relative z-10">Voir comment ça marche</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/20 to-[#00D4FF]/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Indicateur de scroll */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Comment ça marche */}
+      <section id="comment-ca-marche" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+        {/* Éléments décoratifs animés */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-blue-200/20 rounded-full animate-float"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-purple-200/20 rounded-full animate-float" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-cyan-200/20 rounded-full animate-float" style={{animationDelay: '4s'}}></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate-fade-in-up">
+              Comment ça marche
+            </h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed mb-4">
+              Chez Alerti, nous croyons qu'<span className="font-bold text-[#014AAD]">une information reçue à temps peut sauver des vies</span>.
+            </p>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Notre système fonctionne de manière simple, entièrement automatisée et adaptée aux réalités locales.
+            </p>
+          </div>
+
+          {/* Processus principal avec animations et flèches */}
+          <div className="space-y-8">
+              {/* Étape 1 - Capteurs */}
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="relative">
+                  <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
+                    <div className="flex items-center mb-6">
+                      <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate">
+                        <span className="text-white font-bold text-xl">1️⃣</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900">Capteurs intelligents</h3>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      Sur le terrain, des capteurs intelligents sont installés dans les zones à haut risque (ponts, caniveaux, rivières). 
+                      Ces capteurs mesurent en continu le niveau d'eau, la pluviométrie et la vitesse d'écoulement.
+                    </p>
+                  </div>
+                  {/* Animation de données qui circulent */}
+                  <div className="absolute top-8 left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#014AAD] to-transparent opacity-30 animate-data-flow"></div>
+                </div>
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-3xl p-8 border border-[#014AAD]/20">
+                    <div className="text-center">
+                      <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.638 5.338a2.25 2.25 0 00-2.15-1.588H15M9 3.75v11.25m0 0h6m-6 0L12 15.75" />
+                        <circle cx="12" cy="12" r="3" className="animate-pulse" />
+                      </svg>
+                      <p className="text-gray-600 font-medium">Surveillance continue 24h/24</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Flèche mobile */}
+                <div className="lg:hidden flex justify-center my-8">
+                  <svg className="w-8 h-16 text-[#014AAD]/40" fill="currentColor" viewBox="0 0 50 100">
+                    <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" />
+                  </svg>
+                </div>
+              </div>
+
+            {/* Flèche de connexion 1 -> 2 */}
+            <div className="flex justify-center my-12">
+              <div className="relative">
+                <div className="bg-gradient-to-r from-[#014AAD] to-[#00D4FF] rounded-full p-6 shadow-2xl border-4 border-white">
+                  <svg className="w-12 h-12 text-white animate-arrow-pulse drop-shadow-lg" fill="currentColor" viewBox="0 0 50 50">
+                    <path d="M25 8 L25 32 L18 32 L25 42 L32 32 L25 32" strokeWidth="2" stroke="white"/>
+                  </svg>
+                </div>
+                {/* Effet de halo */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD] to-[#00D4FF] rounded-full blur-lg opacity-30 -z-10"></div>
+              </div>
+            </div>
+
+            {/* Étape 2 - Transmission Cloud */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-gradient-to-br from-[#00D4FF]/10 to-[#8B5CF6]/10 rounded-3xl p-8 border border-[#00D4FF]/20">
+                  <div className="text-center">
+                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <p className="text-gray-600 font-medium">Transmission instantanée</p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative order-1 lg:order-2">
+                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-gradient-to-br from-[#00D4FF] to-[#8B5CF6] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '1s'}}>
+                      <span className="text-white font-bold text-xl">2️⃣</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Transmission Cloud AWS</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    Les données collectées sont transmises en temps réel vers notre plateforme cloud (hébergée sur AWS), 
+                    où elles sont analysées automatiquement.
+                  </p>
+                </div>
+                {/* Animation de flux de données */}
+                <div className="absolute top-8 right-8 w-full h-2 bg-gradient-to-l from-transparent via-[#00D4FF] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '1s'}}></div>
+              </div>
+              
+              {/* Flèche mobile */}
+              <div className="lg:hidden flex justify-center my-8 col-span-2">
+                <svg className="w-8 h-16 text-[#00D4FF]/40" fill="currentColor" viewBox="0 0 50 100">
+                  <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '1s'}} />
+                </svg>
+              </div>
+            </div>
+
+            {/* Flèche de connexion 2 -> 3 */}
+            <div className="flex justify-center my-12">
+              <div className="relative">
+                <div className="bg-gradient-to-r from-[#00D4FF] to-[#8B5CF6] rounded-full p-6 shadow-2xl border-4 border-white">
+                  <svg className="w-12 h-12 text-white animate-arrow-pulse drop-shadow-lg" fill="currentColor" viewBox="0 0 50 50" style={{animationDelay: '1s'}}>
+                    <path d="M25 8 L25 32 L18 32 L25 42 L32 32 L25 32" strokeWidth="2" stroke="white"/>
+                  </svg>
+                </div>
+                {/* Effet de halo */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00D4FF] to-[#8B5CF6] rounded-full blur-lg opacity-30 -z-10"></div>
+              </div>
+            </div>
+
+            {/* Étape 3 - Analyse & Prévisions */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-gradient-to-br from-[#8B5CF6] to-[#F54A4D] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '2s'}}>
+                      <span className="text-white font-bold text-xl">3️⃣</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Analyse & Prévisions</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    En parallèle, Alerti récupère les prévisions météorologiques de sources fiables. 
+                    À partir de ces deux sources (capteurs + météo), notre système calcule le niveau de risque d'inondation pour chaque quartier surveillé.
+                  </p>
+                </div>
+                {/* Animation de calcul */}
+                <div className="absolute top-8 left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#8B5CF6] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '2s'}}></div>
+              </div>
+              <div className="relative">
+                <div className="bg-gradient-to-br from-[#8B5CF6]/10 to-[#F54A4D]/10 rounded-3xl p-8 border border-[#8B5CF6]/20">
+                  <div className="text-center">
+                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                    <p className="text-gray-600 font-medium">Intelligence artificielle</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Flèche mobile */}
+              <div className="lg:hidden flex justify-center my-8 col-span-2">
+                <svg className="w-8 h-16 text-[#8B5CF6]/40" fill="currentColor" viewBox="0 0 50 100">
+                  <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '2s'}} />
+                </svg>
+              </div>
+            </div>
+
+            {/* Flèche de connexion 3 -> 4 */}
+            <div className="flex justify-center my-12">
+              <div className="relative">
+                <div className="bg-gradient-to-r from-[#8B5CF6] to-[#F54A4D] rounded-full p-6 shadow-2xl border-4 border-white">
+                  <svg className="w-12 h-12 text-white animate-arrow-pulse drop-shadow-lg" fill="currentColor" viewBox="0 0 50 50" style={{animationDelay: '2s'}}>
+                    <path d="M25 8 L25 32 L18 32 L25 42 L32 32 L25 32" strokeWidth="2" stroke="white"/>
+                  </svg>
+                </div>
+                {/* Effet de halo */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6] to-[#F54A4D] rounded-full blur-lg opacity-30 -z-10"></div>
+              </div>
+            </div>
+
+            {/* Étape 4 - Alertes */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative order-2 lg:order-1">
+                <div className="bg-gradient-to-br from-[#F54A4D]/10 to-[#014AAD]/10 rounded-3xl p-8 border border-[#F54A4D]/20">
+                  <div className="text-center">
+                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
+                      <circle cx="12" cy="12" r="3" className="animate-pulse fill-[#F54A4D]" />
+                    </svg>
+                    <p className="text-gray-600 font-medium">Alertes automatiques</p>
+                  </div>
+                </div>
+              </div>
+              <div className="relative order-1 lg:order-2">
+                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-gradient-to-br from-[#F54A4D] to-[#014AAD] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '3s'}}>
+                      <span className="text-white font-bold text-xl">4️⃣</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Alertes intelligentes</h3>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-lg mb-4">
+                    Lorsque les seuils critiques sont atteints ou qu'une forte pluie est prévue, le système déclenche automatiquement une alerte préventive.
+                  </p>
+                  <div className="space-y-3">
+                    <div className="flex items-center text-sm">
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full mr-3 animate-pulse"></div>
+                      <span className="text-gray-600"><strong>Risque modéré</strong> → SMS d'information</span>
+                    </div>
+                    <div className="flex items-center text-sm">
+                      <div className="w-3 h-3 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+                      <span className="text-gray-600"><strong>Risque élevé</strong> → SMS d'alerte urgente + notifications</span>
+                    </div>
+                  </div>
+                </div>
+                {/* Animation d'alerte */}
+                <div className="absolute top-8 right-8 w-full h-2 bg-gradient-to-l from-transparent via-[#F54A4D] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '3s'}}></div>
+              </div>
+              
+              {/* Flèche mobile */}
+              <div className="lg:hidden flex justify-center my-8 col-span-2">
+                <svg className="w-8 h-16 text-[#F54A4D]/40" fill="currentColor" viewBox="0 0 50 100">
+                  <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '3s'}} />
+                </svg>
+              </div>
+            </div>
+
+            {/* Flèche de connexion 4 -> 5 */}
+            <div className="flex justify-center my-12">
+              <div className="relative">
+                <div className="bg-gradient-to-r from-[#F54A4D] to-[#014AAD] rounded-full p-6 shadow-2xl border-4 border-white">
+                  <svg className="w-12 h-12 text-white animate-arrow-pulse drop-shadow-lg" fill="currentColor" viewBox="0 0 50 50" style={{animationDelay: '3s'}}>
+                    <path d="M25 8 L25 32 L18 32 L25 42 L32 32 L25 32" strokeWidth="2" stroke="white"/>
+                  </svg>
+                </div>
+                {/* Effet de halo */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#F54A4D] to-[#014AAD] rounded-full blur-lg opacity-30 -z-10"></div>
+              </div>
+            </div>
+
+            {/* Étape 5 - Interface */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <div className="bg-white rounded-3xl p-8 shadow-xl hover-lift border border-gray-100">
+                  <div className="flex items-center mb-6">
+                    <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-2xl w-16 h-16 flex items-center justify-center shadow-lg mr-4 animate-pulse-rotate" style={{animationDelay: '4s'}}>
+                      <span className="text-white font-bold text-xl">5️⃣</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Interface Web & Mobile</h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="bg-blue-50 rounded-xl p-4">
+                      <h4 className="font-semibold text-[#014AAD] mb-2">👤 Utilisateur</h4>
+                      <p className="text-gray-600 text-sm">Carte des capteurs, alertes en cours, conseils de prévention</p>
+                    </div>
+                    <div className="bg-purple-50 rounded-xl p-4">
+                      <h4 className="font-semibold text-[#8B5CF6] mb-2">⚙️ Administrateur</h4>
+                      <p className="text-gray-600 text-sm">Statistiques, historique, ajustement des seuils</p>
+                    </div>
+                  </div>
+                </div>
+                {/* Animation finale */}
+                <div className="absolute top-8 left-8 w-full h-2 bg-gradient-to-r from-transparent via-[#014AAD] to-transparent opacity-30 animate-data-flow" style={{animationDelay: '4s'}}></div>
+              </div>
+              <div className="relative">
+                <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-3xl p-8 border border-[#014AAD]/20">
+                  <div className="text-center">
+                    <svg className="w-32 h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M15 14v3.5a2.25 2.25 0 01-2.25 2.25h-1.5A2.25 2.25 0 019 17.8v-3.5m0 0H4.5m5.25 0v-3.5M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L4.5 14m0 0l-1.5-1.5m1.5 1.5l1.5-1.5" />
+                    </svg>
+                    <p className="text-gray-600 font-medium">Dashboard interactif</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Flèche mobile finale */}
+              <div className="lg:hidden flex justify-center my-8 col-span-2">
+                <svg className="w-8 h-16 text-[#014AAD]/40" fill="currentColor" viewBox="0 0 50 100">
+                  <path d="M25 0 L25 70 L20 70 L25 80 L30 70 L25 70" className="animate-arrow-pulse" style={{animationDelay: '4s'}} />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Section finale avec boucle continue */}
+          <div className="mt-20 text-center">
+            <div className="bg-gradient-to-r from-[#014AAD] to-[#00D4FF] rounded-3xl p-8 text-white relative overflow-hidden">
+              <div className="relative z-10">
+                <div className="flex items-center justify-center mb-4">
+                  <svg className="w-12 h-12 mr-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  <h3 className="text-2xl font-bold">🔄 Surveillance continue 24h/24, 7j/7</h3>
+                </div>
+                <p className="text-xl opacity-90 max-w-3xl mx-auto">
+                  Ce système fonctionne avec des mises à jour automatiques, pour assurer une surveillance continue des zones les plus vulnérables.
+                </p>
+              </div>
+              {/* Animation de fond */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Fonctionnalités */}
+      <section id="fonctionnalites" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Fonctionnalités clés
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Une technologie de pointe au service de la sécurité des populations
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: (
+                  <svg className="w-16 h-16 text-[#014AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                ),
+                title: "Capteurs intelligents connectés (IoT)",
+                description: "Réseau de capteurs dernière génération pour un monitoring en temps réel"
+              },
+              {
+                icon: (
+                  <svg className="w-16 h-16 text-[#00D4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                  </svg>
+                ),
+                title: "Plateforme cloud AWS fiable",
+                description: "Infrastructure scalable et sécurisée pour traiter les données rapidement"
+              },
+              {
+                icon: (
+                  <svg className="w-16 h-16 text-[#F54A4D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                ),
+                title: "Alertes automatiques par SMS",
+                description: "Notifications instantanées pour protéger les populations à risque"
+              },
+              {
+                icon: (
+                  <svg className="w-16 h-16 text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                ),
+                title: "Prévisions météo locales",
+                description: "Données précises et localisées pour une meilleure anticipation"
+              },
+              {
+                icon: (
+                  <svg className="w-16 h-16 text-[#014AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
+                  </svg>
+                ),
+                title: "Cartographie en temps réel",
+                description: "Application mobile avec visualisation interactive des zones à risque"
+              },
+              {
+                icon: (
+                  <svg className="w-16 h-16 text-[#00D4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                  </svg>
+                ),
+                title: "Deux rôles utilisateurs",
+                description: "Interface administrateur et citoyen pour une gestion optimale"
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group relative bg-white rounded-2xl p-8 hover-lift border border-gray-100 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#014AAD] via-[#00D4FF] to-[#8B5CF6] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="relative z-10">
+                  <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 flex justify-center">{feature.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#014AAD] transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#014AAD]/5 to-[#00D4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section Application Mobile */}
+      <section id="application" className="py-20 bg-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Application <span className="text-gradient">Mobile Alerti</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Découvrez l'application mobile Alerti qui permet aux utilisateurs de recevoir des alertes en temps réel et de visualiser les zones à risque.
+            </p>
+          </div>
+
+          {/* Carousel des captures d'écran dans des frames iPhone */}
+          <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
+            <div className="flex overflow-x-auto space-x-4 pb-8 snap-x snap-mandatory scrollbar-hide px-8 py-4">
+              {[
+                '/app_screens/Screenshot_20251017_141057.jpg',
+                '/app_screens/Screenshot_20251017_141339.jpg',
+                '/app_screens/Screenshot_20251017_141353.jpg',
+                '/app_screens/Screenshot_20251017_141118.jpg',
+                '/app_screens/Screenshot_20251017_141124.jpg',
+                '/app_screens/Screenshot_20251017_141138.jpg',
+                '/app_screens/Screenshot_20251017_141147.jpg',
+                '/app_screens/Screenshot_20251017_141158.jpg',
+                '/app_screens/Screenshot_20251017_141233.jpg',
+                '/app_screens/Screenshot_20251017_141314.jpg',
+                '/app_screens/Screenshot_20251017_141256.jpg',
+                '/app_screens/Screenshot_20251017_211417.jpg',
+                '/app_screens/Screenshot_20251017_211457.jpg',
+                '/app_screens/Screenshot_20251017_211628.jpg'
+              ].map((screenshot, index) => (
+                <div key={index} className="flex-shrink-0 snap-center group px-2">
+                  {/* Container avec ombre externe */}
+                  <div className="drop-shadow-2xl">
+                    {/* Frame iPhone */}
+                    <div className="relative w-72 h-[600px] mx-auto transform group-hover:scale-105 transition-transform duration-300 overflow-hidden rounded-[2.5rem]">
+                    {/* iPhone Frame */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2.5rem] p-3 shadow-2xl overflow-hidden">
+                      {/* Bordure intérieure */}
+                      <div className="w-full h-full bg-gray-900 rounded-[2rem] p-1 overflow-hidden">
+                        <div className="w-full h-full bg-white rounded-[1.8rem] overflow-hidden relative">
+                          {/* Dynamic Island */}
+                          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-full z-10 flex items-center justify-center">
+                            <div className="w-6 h-6 bg-gray-700 rounded-full"></div>
+                          </div>
+
+                          {/* Screenshot */}
+                          <div className="w-full h-full overflow-hidden rounded-[1.8rem]">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+                              src={screenshot}
+                              alt={`Capture d'écran Alerti ${index + 1}`}
+                              width={280}
+                              height={560}
+                              className="w-full h-full object-cover rounded-[1.8rem]"
+                            />
+                          </div>
+
+                          {/* Home indicator */}
+                          <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-black/60 rounded-full"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Effet de brillance */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none rounded-[2.5rem] overflow-hidden"></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Indicateur de scroll */}
+            <div className="text-center mt-8">
+              <div className="flex items-center justify-center space-x-4">
+                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse"></div>
+                <p className="text-gray-500 text-sm font-medium">← Faites défiler horizontalement pour voir toutes les captures d'écran →</p>
+                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Description des fonctionnalités de l'app */}
+          <div className="mt-16 grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#014AAD] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-5 5v-5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c-2.4 0-4.333 1.9-4.333 4.25v3.25l-2 1.546a2 2 0 00-.667 1.5v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 00-.667-1.5l-2-1.546V6.25C13.333 3.9 11.4 2 12 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Alertes Push</h3>
+              <p className="text-gray-600">Notifications instantanées sur votre téléphone</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#00D4FF] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Cartes Interactives</h3>
+              <p className="text-gray-600">Visualisez les zones à risque en temps réel</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#8B5CF6] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Données Temps Réel</h3>
+              <p className="text-gray-600">Informations météo et niveaux d'eau actuels</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Impact & Résultats */}
+      <section id="impact" className="py-20 bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Notre Impact
+            </h2>
+            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+              Des résultats concrets qui sauvent des vies chaque jour
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white mb-2">+500</div>
+              <div className="text-xl opacity-90">foyers protégés à Bamako</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white mb-2">3</div>
+              <div className="text-xl opacity-90">zones couvertes : Sebenikoro, Yirimadio, Missabougou</div>
+            </div>
+            <div className="text-center">
+              <div className="text-5xl font-bold text-white mb-2">48h</div>
+              <div className="text-xl opacity-90">temps d'alerte moyen avant la crue</div>
+            </div>
+          </div>
+
+          {/* Témoignage */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center max-w-4xl mx-auto">
+            <blockquote className="text-xl italic mb-6">
+              "Parce qu'une information à temps peut sauver des vies. Alerti nous a permis d'évacuer notre quartier avant la dernière grande inondation. Merci à toute l'équipe !"
+            </blockquote>
+            <div className="text-lg font-semibold">Mariam Traoré</div>
+            <div className="opacity-75">Habitante de Sebenikoro</div>
+          </div>
+
+          {/* Partenaires */}
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-semibold mb-8">Nos partenaires</h3>
+            <div className="flex justify-center items-center space-x-8 opacity-75">
+              <div className="text-lg">Orange Digital Center</div>
+              <div className="w-px h-8 bg-white/50"></div>
+              <div className="text-lg">Marakadev</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Équipe moderne */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/5 to-[#00D4FF]/5"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Notre <span className="text-gradient">Équipe</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Une initiative portée par de <span className="font-semibold text-[#014AAD]">jeunes innovateurs maliens</span> engagés pour la sécurité des populations.
+            </p>
+          </div>
+
+          {/* Grille des 5 membres de l'équipe */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+            {[
+              {
+                name: "Mamadou Sylla",
+                role: "Développeur Full-Stack",
+                icon: (
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                  </svg>
+                ),
+                gradient: "from-[#014AAD] to-[#00D4FF]"
+              },
+              {
+                name: "Adama Sissoko",
+                role: "Développeur Web & Mobile",
+                icon: (
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                  </svg>
+                ),
+                gradient: "from-[#00D4FF] to-[#8B5CF6]"
+              },
+              {
+                name: "Issa",
+                role: "L'électronicien",
+                icon: (
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                  </svg>
+                ),
+                gradient: "from-[#8B5CF6] to-[#F54A4D]"
+              },
+              {
+                name: "Mohamed Fane",
+                role: "Le Designer",
+                icon: (
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+                  </svg>
+                ),
+                gradient: "from-[#F54A4D] to-[#014AAD]"
+              },
+              {
+                name: "Fatoumata",
+                role: "Porteuse de projets",
+                icon: (
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.599 2.6c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
+                  </svg>
+                ),
+                gradient: "from-[#014AAD] to-[#F54A4D]"
+              }
+            ].map((member, index) => (
+              <div key={index} className="group text-center hover-lift">
+                <div className="relative mb-6">
+                  <div className={`bg-gradient-to-br ${member.gradient} rounded-3xl w-32 h-32 mx-auto flex items-center justify-center shadow-2xl group-hover:shadow-xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2`}>
+                    {member.icon}
+                  </div>
+                  <div className={`absolute -inset-2 bg-gradient-to-br ${member.gradient} rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#014AAD] transition-colors duration-300">{member.name}</h3>
+                <p className="text-sm text-gray-600 font-medium">{member.role}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Badge de l'équipe */}
+          <div className="mt-16 text-center">
+            <div className="inline-flex items-center space-x-3 bg-white rounded-full px-8 py-4 shadow-lg border border-gray-100">
+              <div className="text-3xl">🇲🇱</div>
+              <div className="text-left">
+                <div className="text-lg font-bold text-gray-900">Équipe Alerti</div>
+                <div className="text-sm text-gray-600">5 jeunes développeurs maliens passionnés</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Contact */}
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Rejoignez-nous dans la lutte contre les inondations
+            </h2>
+            <p className="text-xl text-gray-600">
+              Contactez-nous pour en savoir plus ou participer au projet
+            </p>
+          </div>
+
+          <div className="relative bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100 overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-full -mr-16 -mt-16"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#8B5CF6]/10 to-[#F54A4D]/10 rounded-full -ml-12 -mb-12"></div>
+
+            <form onSubmit={handleSubmit} className="relative z-10 space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="group">
+                  <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-3">
+                    Nom complet
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400"
+                    placeholder="Votre nom"
+                  />
+                </div>
+                <div className="group">
+                  <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-3">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400"
+                    placeholder="votre@email.com"
+                  />
+                </div>
+              </div>
+              <div className="group">
+                <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-3">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  required
+                  rows={6}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 resize-none"
+                  placeholder="Votre message..."
+                />
+              </div>
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="group relative bg-gradient-to-r from-[#014AAD] to-[#00D4FF] hover:from-[#003d8a] hover:to-[#00B8E6] text-white font-bold py-5 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#014AAD]/30 overflow-hidden"
+                >
+                  <span className="relative z-10">Contactez-nous</span>
+                  <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          {/* Informations de contact */}
+          <div className="mt-12 text-center">
+            <div className="flex justify-center space-x-8 text-gray-600">
+              <a href="mailto:contact@alerti.ml" className="hover:text-[#014AAD] transition-colors">
+                📧 contact@alerti.ml
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer moderne */}
+      <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#00D4FF]/10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="relative inline-block mb-8">
+              <div className="relative">
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+                  src="/logo_long.png"
+                  alt="Alerti Logo"
+                  width={500}
+                  height={50}
+                  className="h-50 w-auto object-cover mx-auto"
+                />
+                {/* <div className="absolute -inset-2 bg-gradient-to-r from-[#014AAD]/20 to-[#00D4FF]/20 rounded-lg blur-lg"></div> */}
+              </div>
+            </div>
+            <p className="text-xl text-gray-300 mb-8 font-light">L'alerte qui sauve des vies</p>
+            <div className="flex justify-center items-center space-x-4 mb-8">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent to-[#014AAD]"></div>
+              <span className="text-[#00D4FF] text-2xl">🇲🇱</span>
+              <div className="w-12 h-px bg-gradient-to-l from-transparent to-[#014AAD]"></div>
+            </div>
+            <div className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto">
+              © 2024 Alerti. Tous droits réservés. | Prévention des inondations au Mali<br />
+              <span className="text-gray-500">Innovation technologique au service de la sécurité publique</span>
+            </div>
+          </div>
+        </div>
+        {/* Effets de particules */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(15)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-1 h-1 bg-[#00D4FF]/30 rounded-full animate-pulse-slow"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            ></div>
+          ))}
+        </div>
       </footer>
     </div>
   );
