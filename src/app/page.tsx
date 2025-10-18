@@ -18,6 +18,19 @@ export default function Home() {
     setFormData({ name: '', email: '', message: '' });
   };
 
+  const smoothScrollTo = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const navHeight = 96; // Hauteur de la navigation fixe (h-24 = 96px)
+      const elementPosition = element.offsetTop - navHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation moderne */}
@@ -40,26 +53,26 @@ export default function Home() {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-2">
-                <a href="#comment-ca-marche" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('comment-ca-marche')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Comment ça marche</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a href="#fonctionnalites" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                </button>
+                <button onClick={() => smoothScrollTo('fonctionnalites')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Fonctionnalités</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a href="#application" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                </button>
+                <button onClick={() => smoothScrollTo('application')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Application</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a href="#impact" className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                </button>
+                <button onClick={() => smoothScrollTo('impact')} className="relative text-gray-800 hover:text-[#014AAD] px-5 py-3 rounded-full text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Impact</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-                <a href="#contact" className="relative bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white px-8 py-3 rounded-full text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                </button>
+                <button onClick={() => smoothScrollTo('contact')} className="relative bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white px-8 py-3 rounded-full text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
                   <span className="relative z-10">Contact</span>
                   <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -128,20 +141,20 @@ export default function Home() {
               Grâce à Alerti, les habitants des zones à risque reçoivent une alerte <span className="font-bold text-white">1 à 2 jours</span> avant une inondation prévue.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a
-                href="#comment-ca-marche"
+              <button
+                onClick={() => smoothScrollTo('comment-ca-marche')}
                 className="group relative bg-gradient-to-r from-[#F54A4D] to-[#8B5CF6] text-white font-semibold py-5 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#F54A4D]/30"
               >
                 <span className="relative z-10">Découvrir Alerti</span>
                 <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-          </a>
-          <a
-                href="#fonctionnalites"
+          </button>
+          <button
+                onClick={() => smoothScrollTo('fonctionnalites')}
                 className="group relative glass-morphism text-white font-semibold py-5 px-10 rounded-full text-lg border border-white/30 transition-all duration-300 hover:scale-105"
               >
                 <span className="relative z-10">Voir comment ça marche</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/20 to-[#00D4FF]/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-              </a>
+              </button>
             </div>
           </div>
         </div>
