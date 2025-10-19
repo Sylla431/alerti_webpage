@@ -112,7 +112,7 @@ export default function Home() {
 
   // Écran de chargement
   if (!isLoaded) {
-    return (
+  return (
       <div className="fixed inset-0 bg-gradient-to-br from-[#014AAD] via-[#8B5CF6] to-[#F54A4D] flex items-center justify-center z-50">
         {/* Effet de particules en arrière-plan */}
         <div className="absolute inset-0 overflow-hidden">
@@ -369,9 +369,14 @@ export default function Home() {
                 <div className="relative order-1 lg:order-2">
                   <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#014AAD]/20">
                     <div className="text-center">
-                      <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.638 5.338a2.25 2.25 0 00-2.15-1.588H15M9 3.75v11.25m0 0h6m-6 0L12 15.75" />
-                        <circle cx="12" cy="12" r="3" className="animate-pulse" />
+                      <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float text-[#014AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                        {/* Icône de capteur IoT */}
+                        <rect x="3" y="4" width="18" height="12" rx="2" />
+                        <circle cx="8" cy="10" r="1" fill="currentColor" />
+                        <circle cx="12" cy="10" r="1" fill="currentColor" />
+                        <circle cx="16" cy="10" r="1" fill="currentColor" />
+                        <path d="M9 16v2a2 2 0 002 2h2a2 2 0 002-2v-2" />
+                        <path d="M12 4V2" />
                       </svg>
                       <p className="text-gray-600 font-medium text-sm sm:text-base">Surveillance continue 24h/24</p>
                     </div>
@@ -420,8 +425,10 @@ export default function Home() {
               <div className="relative order-1 lg:order-2">
                 <div className="bg-gradient-to-br from-[#00D4FF]/10 to-[#8B5CF6]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#00D4FF]/20">
                   <div className="text-center">
-                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float text-[#00D4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      {/* Icône de cloud avec upload */}
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v6m0 0l-3-3m3 3l3-3" />
                     </svg>
                     <p className="text-gray-600 font-medium text-sm sm:text-base">Transmission instantanée</p>
                   </div>
@@ -470,8 +477,9 @@ export default function Home() {
               <div className="relative order-1 lg:order-2">
                 <div className="bg-gradient-to-br from-[#8B5CF6]/10 to-[#F54A4D]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#8B5CF6]/20">
                   <div className="text-center">
-                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      {/* Icône d'analyse/cerveau */}
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
                     <p className="text-gray-600 font-medium text-sm sm:text-base">Intelligence artificielle</p>
                   </div>
@@ -520,9 +528,9 @@ export default function Home() {
               <div className="relative order-1 lg:order-2">
                 <div className="bg-gradient-to-br from-[#F54A4D]/10 to-[#014AAD]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#F54A4D]/20">
                   <div className="text-center">
-                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" />
-                      <circle cx="12" cy="12" r="3" className="animate-pulse fill-[#F54A4D]" />
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float text-[#F54A4D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      {/* Icône d'alerte simple */}
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                     </svg>
                     <p className="text-gray-600 font-medium text-sm sm:text-base">Alertes automatiques</p>
                   </div>
@@ -580,8 +588,12 @@ export default function Home() {
               <div className="relative order-1 lg:order-2">
                 <div className="bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-[#014AAD]/20">
                   <div className="text-center">
-                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M15 14v3.5a2.25 2.25 0 01-2.25 2.25h-1.5A2.25 2.25 0 019 17.8v-3.5m0 0H4.5m5.25 0v-3.5M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L4.5 14m0 0l-1.5-1.5m1.5 1.5l1.5-1.5" />
+                    <svg className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 mx-auto mb-4 animate-float text-[#014AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      {/* Icône de dashboard/interface */}
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <rect x="5" y="5" width="3" height="8" fill="currentColor" />
+                      <rect x="10" y="7" width="3" height="6" fill="currentColor" />
+                      <rect x="15" y="6" width="3" height="9" fill="currentColor" />
                     </svg>
                     <p className="text-gray-600 font-medium text-sm sm:text-base">Dashboard interactif</p>
                   </div>
@@ -627,7 +639,7 @@ export default function Home() {
                   <svg className="w-12 h-12 mr-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                   </svg>
-                  <h3 className="text-2xl font-bold">🔄 Surveillance continue 24h/24, 7j/7</h3>
+                  <h3 className="text-2xl font-bold">Surveillance continue 24h/24, 7j/7</h3>
                 </div>
                 <p className="text-xl opacity-90 max-w-3xl mx-auto">
                   Ce système fonctionne avec des mises à jour automatiques, pour assurer une surveillance continue des zones les plus vulnérables.
@@ -766,9 +778,9 @@ export default function Home() {
                       <div className="w-full h-full bg-gray-900 rounded-[2rem] p-1 overflow-hidden">
                         <div className="w-full h-full bg-white rounded-[1.8rem] overflow-hidden relative">
                           {/* Dynamic Island */}
-                          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-full z-10 flex items-center justify-center">
+                          {/* <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-7 bg-black rounded-full z-10 flex items-center justify-center">
                             <div className="w-6 h-6 bg-gray-700 rounded-full"></div>
-                          </div>
+                          </div> */}
 
                           {/* Screenshot */}
                           <div className="w-full h-full overflow-hidden rounded-[1.8rem]">
@@ -862,14 +874,14 @@ export default function Home() {
             </div>
             <div className="text-center">
               <div className="text-5xl font-bold text-white mb-2">48h</div>
-              <div className="text-xl opacity-90">temps d&apos;alerte moyen avant la crue</div>
+              <div className="text-xl opacity-90">temps d&apos;alerte moyen avant les inondations</div>
             </div>
           </div>
 
           {/* Témoignage */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 text-center max-w-4xl mx-auto">
             <blockquote className="text-xl italic mb-6">
-              &quot;Parce qu&apos;une information à temps peut sauver des vies. Alerti nous a permis d&apos;évacuer notre quartier avant la dernière grande inondation. Merci à toute l&apos;équipe !&quot;
+              &quot;Parce qu&apos;une information à temps peut sauver des vies. Alerti nous a permis d&apos;évacuer notre maison avant la dernière grande inondation. Merci à toute l&apos;équipe !&quot;
             </blockquote>
             <div className="text-lg font-semibold">Mariam Traoré</div>
             <div className="opacity-75">Habitante de Sebenikoro</div>
@@ -1055,9 +1067,23 @@ export default function Home() {
 
           {/* Informations de contact */}
           <div className="mt-12 text-center">
-            <div className="flex justify-center space-x-8 text-gray-600">
-              <a href="mailto:contact@alerti.ml" className="hover:text-[#014AAD] transition-colors">
-                📧 contact@alerti.ml
+            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-gray-600">
+              <a href="mailto:contact@alerti.ml" className="hover:text-[#014AAD] transition-colors flex items-center">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.93V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l7-4.666M21 19l-7-4.666M3 10.93V19m7-7.07V19" />
+                </svg>
+                <span>contact@alerti.ml</span>
+              </a>
+              <a 
+                href="https://wa.me/22399961761?text=Bonjour%20Alerti,%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services%20d'alerte%20inondation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center space-x-2"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                </svg>
+                <span>Discuter sur WhatsApp</span>
               </a>
             </div>
           </div>
