@@ -75,7 +75,7 @@ export default function Home() {
         await document.fonts.ready;
 
         // Attendre que toutes les images critiques soient chargées
-        const criticalImages = ['/logo_long.png', '/icone_background.png'];
+        const criticalImages = ['/logo_long.png'];
         const imagePromises = criticalImages.map((src) => {
           return new Promise<void>((resolve) => {
             const img = new window.Image();
@@ -254,15 +254,6 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden hero-section">
         {/* Fond moderne avec mesh gradient - animation réduite */}
         <div className="absolute inset-0 gradient-mesh" style={{animation: 'gradientShift 6s ease infinite'}}>
-          <div className="absolute inset-0">
-            <Image
-              src="/icone_background.png"
-              alt="Alerti Background"
-              fill
-              className="object-cover opacity-20 transition-opacity duration-500"
-              priority
-            />
-          </div>
           <div className="absolute inset-0 bg-black/40 transition-opacity duration-500"></div>
           {/* Effet de particules flottantes - réduit et optimisé */}
           <div className="absolute inset-0">
