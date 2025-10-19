@@ -12,12 +12,40 @@ export default function Home() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Ici vous pourrez connecter avec votre backend Laravel ou Amazon SES
-    console.log('Form submitted:', formData);
-    alert('Merci pour votre message ! Nous vous répondrons rapidement.');
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Option 1: Formspree (recommandé pour site vitrine)
+      const response = await fetch('https://formspree.io/f/mzzjwrnv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const smoothScrollTo = (elementId: string) => {
@@ -1020,7 +1048,7 @@ export default function Home() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400"
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900"
                     placeholder="Votre nom"
                   />
                 </div>
@@ -1034,7 +1062,7 @@ export default function Home() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400"
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900"
                     placeholder="votre@email.com"
                   />
                 </div>
@@ -1049,17 +1077,48 @@ export default function Home() {
                   rows={6}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 resize-none"
+                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900 resize-none"
                   placeholder="Votre message..."
                 />
               </div>
-              <div className="text-center">
+              <div className="text-center space-y-4">
+                {/* Messages de statut */}
+                {submitStatus === 'success' && (
+                  <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
+                    ✅ Message envoyé avec succès ! Nous vous répondrons rapidement.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg">
+                    ❌ Erreur lors de l'envoi. Veuillez réessayer ou nous contacter directement.
+                  </div>
+                )}
+                
                 <button
                   type="submit"
-                  className="group relative bg-gradient-to-r from-[#014AAD] to-[#00D4FF] hover:from-[#003d8a] hover:to-[#00B8E6] text-white font-bold py-5 px-12 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#014AAD]/30 overflow-hidden"
+                  disabled={isSubmitting}
+                  className={`group relative ${
+                    isSubmitting 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : 'bg-gradient-to-r from-[#014AAD] to-[#00D4FF] hover:from-[#003d8a] hover:to-[#00B8E6] hover:scale-105 hover:shadow-2xl hover:shadow-[#014AAD]/30'
+                  } text-white font-bold py-5 px-12 rounded-full text-lg transition-all duration-300 transform overflow-hidden`}
                 >
-                  <span className="relative z-10">Contactez-nous</span>
-                  <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <span className="relative z-10 flex items-center justify-center space-x-2">
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Envoi en cours...</span>
+                      </>
+                    ) : (
+                      <span>Contactez-nous</span>
+                    )}
+                  </span>
+                  {!isSubmitting && (
+                    <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  )}
                 </button>
               </div>
             </form>
@@ -1068,16 +1127,16 @@ export default function Home() {
           {/* Informations de contact */}
           <div className="mt-12 text-center">
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-gray-600">
-              <a href="mailto:contact@alerti.ml" className="hover:text-[#014AAD] transition-colors flex items-center">
+              <a href="mailto:alertino25@gmail.com" className="hover:text-[#014AAD] transition-colors flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.93V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l7-4.666M21 19l-7-4.666M3 10.93V19m7-7.07V19" />
                 </svg>
-                <span>contact@alerti.ml</span>
-              </a>
-              <a 
+                <span>alertino25@gmail.com</span>
+        </a>
+        <a
                 href="https://wa.me/22399961761?text=Bonjour%20Alerti,%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services%20d'alerte%20inondation"
-                target="_blank"
-                rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                 className="bg-[#25D366] hover:bg-[#20BA5A] text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center space-x-2"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
