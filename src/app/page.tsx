@@ -113,8 +113,8 @@ export default function Home() {
           });
         });
 
-        // Attendre un délai minimum pour s'assurer que tout est prêt
-        const minLoadTime = new Promise(resolve => setTimeout(resolve, 2000));
+        // Attendre un délai minimum réduit pour s'assurer que tout est prêt
+        const minLoadTime = new Promise(resolve => setTimeout(resolve, 500));
 
         // Attendre que toutes les promesses se résolvent
         await Promise.all([...imagePromises, minLoadTime]);
@@ -123,15 +123,15 @@ export default function Home() {
         await new Promise(resolve => {
           // Forcer un reflow pour s'assurer que les styles sont appliqués
           document.body.offsetHeight;
-          setTimeout(resolve, 800);
+          setTimeout(resolve, 200);
         });
         
         // Transition fluide vers le contenu
         setIsLoaded(true);
       } catch (error) {
         console.log('Erreur lors du chargement:', error);
-        // Charger quand même après un délai minimum
-        setTimeout(() => setIsLoaded(true), 3000);
+        // Charger quand même après un délai minimum réduit
+        setTimeout(() => setIsLoaded(true), 1000);
       }
     };
 
@@ -142,17 +142,17 @@ export default function Home() {
   if (!isLoaded) {
   return (
       <div className="fixed inset-0 bg-gradient-to-br from-[#014AAD] via-[#8B5CF6] to-[#F54A4D] flex items-center justify-center z-50">
-        {/* Effet de particules en arrière-plan */}
+        {/* Effet de particules en arrière-plan optimisé */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-white/30 rounded-full animate-float"
+              className="absolute w-1 h-1 bg-white/30 rounded-full animate-float optimized-float"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
+                animationDuration: `${3 + Math.random() * 2}s`
               }}
             ></div>
           ))}
@@ -280,33 +280,31 @@ export default function Home() {
 
       {/* Section Héros moderne */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden hero-section">
-        {/* Fond moderne avec mesh gradient - animation réduite */}
-        <div className="absolute inset-0 gradient-mesh" style={{animation: 'gradientShift 6s ease infinite'}}>
+        {/* Fond moderne avec mesh gradient - animation optimisée */}
+        <div className="absolute inset-0 gradient-mesh" style={{animation: 'gradientShift 8s ease infinite'}}>
           <div className="absolute inset-0 bg-black/40 transition-opacity duration-500"></div>
-          {/* Effet de particules flottantes - réduit et optimisé */}
+          {/* Effet de particules flottantes - optimisé */}
           <div className="absolute inset-0">
-            {[...Array(15)].map((_, i) => (
+            {[...Array(6)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-white/20 rounded-full"
+                className="absolute w-2 h-2 bg-white/20 rounded-full optimized-float"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
                   animation: `float ${4 + Math.random() * 2}s ease-in-out infinite`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  willChange: 'transform'
+                  animationDelay: `${Math.random() * 3}s`
                 }}
               ></div>
             ))}
-            {[...Array(8)].map((_, i) => (
+            {[...Array(4)].map((_, i) => (
               <div
                 key={`rain-${i}`}
-                className="absolute w-0.5 h-12 bg-gradient-to-b from-white/40 to-transparent"
+                className="absolute w-0.5 h-12 bg-gradient-to-b from-white/40 to-transparent optimized-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   animation: `pulse ${2 + Math.random() * 1.5}s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  willChange: 'opacity'
+                  animationDelay: `${Math.random() * 2}s`
                 }}
               ></div>
             ))}
@@ -818,6 +816,9 @@ export default function Home() {
                               width={280}
                               height={560}
                               className="w-full h-full object-cover rounded-[1.8rem]"
+                              loading="lazy"
+                              placeholder="blur"
+                              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                             />
                           </div>
 
@@ -1177,17 +1178,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* Effets de particules */}
+        {/* Effets de particules optimisé */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-[#00D4FF]/30 rounded-full animate-pulse-slow"
+              className="absolute w-1 h-1 bg-[#00D4FF]/30 rounded-full animate-pulse-slow optimized-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
+                animationDuration: `${3 + Math.random() * 2}s`
               }}
             ></div>
           ))}

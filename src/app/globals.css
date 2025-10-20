@@ -92,6 +92,14 @@ body {
   }
 }
 
+/* Optimisation pour le gradient mesh */
+.gradient-mesh {
+  will-change: background-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 @keyframes pulseAndRotate {
   0%, 100% {
     transform: scale(1) rotate(0deg);
@@ -287,8 +295,22 @@ body {
 .optimized-float {
   will-change: transform;
   transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .optimized-pulse {
   will-change: opacity;
+  transform: translateZ(0);
+}
+
+/* Optimisations générales pour les animations */
+.animate-float,
+.animate-pulse-rotate,
+.animate-data-flow,
+.animate-arrow-pulse {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
