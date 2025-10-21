@@ -13,16 +13,6 @@
   --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-alerti-blue: var(--alerti-blue);
-  --color-alerti-red: var(--alerti-red);
-  --color-alerti-light-blue: var(--alerti-light-blue);
-  --color-alerti-gray: var(--alerti-gray);
-  --font-sans: var(--font-poppins), var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -310,6 +300,32 @@ body {
 .animate-data-flow,
 .animate-arrow-pulse {
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animation pour les particules de données qui voyagent */
+@keyframes dataTravel {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(800px);
+    opacity: 0;
+  }
+}
+
+.animate-data-travel {
+  animation: dataTravel 3s ease-in-out infinite;
+  will-change: transform, opacity;
   transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
