@@ -375,7 +375,7 @@ export default function Home() {
           <div className="absolute bottom-20 left-1/4 w-8 h-8 bg-cyan-200/20 rounded-full animate-float optimized-float" style={{animationDelay: '4s'}}></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full flex flex-col justify-center min-h-[80vh]">
           {/* Titre compact */}
           <div className="text-center mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 animate-fade-in-up">
