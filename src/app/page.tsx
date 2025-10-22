@@ -731,6 +731,25 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Bouton de téléchargement de l'app */}
+          <div className="mt-12 text-center">
+            <a
+              href="https://drive.google.com/file/d/1sNUYZ4Nn1xuYD0jBDY7yQ86fisIVZ7HY/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center bg-gradient-to-r from-[#014AAD] to-[#00D4FF] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#014AAD]/30"
+            >
+              <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span className="relative z-10">Télécharger l'application Alerti</span>
+              <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
+            <p className="text-sm text-gray-500 mt-3">
+              Version APK pour Android - Téléchargement gratuit
+            </p>
+          </div>
+
           {/* Description des fonctionnalités de l'app */}
           <div className="mt-16 grid md:grid-cols-3 gap-8">
             <div className="text-center">
