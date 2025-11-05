@@ -682,9 +682,10 @@ export default function Home() {
           </div>
 
           {/* Collage photo avec images et vidéos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="overflow-x-auto md:overflow-x-visible -mx-4 px-4 md:mx-0 md:px-0">
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 min-w-max md:min-w-0">
             {/* Image 1 - Grande */}
-            <div className="md:col-span-1 lg:col-span-2 md:row-span-2 group">
+            <div className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-1 lg:col-span-2 md:row-span-2 group">
               <div className="relative w-full h-full min-h-[300px] sm:min-h-[400px] rounded-2xl overflow-hidden shadow-xl hover-lift">
                 <Image
                   src="/dispositif/IMG-20251007-WA0022.jpg"
@@ -697,7 +698,7 @@ export default function Home() {
             </div>
 
             {/* Vidéo 1 */}
-            <div className="md:col-span-1 group">
+            <div className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-1 group">
               <div className="relative w-full h-full min-h-[250px] sm:min-h-[300px] rounded-2xl overflow-hidden shadow-xl hover-lift">
                 <video
                   autoPlay
@@ -718,7 +719,7 @@ export default function Home() {
             </div>
 
             {/* Image 2 */}
-            <div className="md:col-span-1 group">
+            <div className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-1 group">
               <div className="relative w-full h-full min-h-[250px] sm:min-h-[300px] rounded-2xl overflow-hidden shadow-xl hover-lift">
                 <Image
                   src="/dispositif/IMG-20251007-WA0024.jpg"
@@ -731,7 +732,7 @@ export default function Home() {
             </div>
 
             {/* Vidéo 2 - Grande */}
-            <div className="md:col-span-2 lg:col-span-1 group">
+            <div className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-2 lg:col-span-1 group">
               <div className="relative w-full h-full min-h-[300px] sm:min-h-[400px] rounded-2xl overflow-hidden shadow-xl hover-lift">
                 <video
                   autoPlay
@@ -750,7 +751,24 @@ export default function Home() {
                 </div>
               </div>
             </div>
+             {/* video 3 */}
+            <div className="flex-shrink-0 w-[85vw] md:w-auto md:col-span-1 lg:col-span-2 md:row-span-2 group">
+              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl hover-lift">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                >
+                  <source src="/dispositif/VID-20251028-WA0021(1).mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+            </div>
           </div>
+         
 
           {/* Description du dispositif */}
           <div className="mt-12 sm:mt-16 text-center">
