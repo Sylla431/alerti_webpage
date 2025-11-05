@@ -1006,7 +1006,7 @@ export default function Home() {
               },
               {
                 name: "Issa",
-                role: "L&apos;électronicien",
+                role: "Electronicien",
                 image: "/team/issa.png",
                 // gradient: "from-[#8B5CF6] to-[#F54A4D]"
               },
@@ -1025,13 +1025,13 @@ export default function Home() {
             ].map((member, index) => (
               <div key={index} className="group text-center hover-lift">
                 <div className="relative mb-6">
-                  <div className="bg-white rounded-3xl w-48 h-48 sm:w-52 sm:h-52 lg:w-56 lg:h-56 mx-auto flex items-center justify-center shadow-2xl group-hover:shadow-xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2 overflow-hidden p-2">
+                  <div className="bg-white rounded-3xl w-48 h-48 sm:w-52 sm:h-52 lg:w-56 lg:h-56 mx-auto flex items-start justify-center shadow-2xl group-hover:shadow-xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2 overflow-hidden p-2">
                     <Image
                       src={member.image}
                       alt={member.name}
                       width={224}
                       height={224}
-                      className="w-full h-full object-contain rounded-3xl"
+                      className="w-full h-[130%] object-cover object-top rounded-3xl"
                     />
                   </div>
                   {/* <div className={`absolute -inset-2 bg-gradient-to-br ${member.gradient} rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div> */}
