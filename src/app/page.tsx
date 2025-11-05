@@ -227,6 +227,10 @@ export default function Home() {
                   <span className="relative z-10">Fonctionnalités</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
+                <button onClick={() => smoothScrollTo('dispositif')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                  <span className="relative z-10">Dispositif</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
                 <button onClick={() => smoothScrollTo('application')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
                   <span className="relative z-10">Application</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -262,6 +266,9 @@ export default function Home() {
                 </button>
                 <button onClick={() => {smoothScrollTo('fonctionnalites'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
                   Fonctionnalités
+                </button>
+                <button onClick={() => {smoothScrollTo('dispositif'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                  Dispositif
                 </button>
                 <button onClick={() => {smoothScrollTo('application'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
                   Application
@@ -658,6 +665,105 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#014AAD]/5 to-[#00D4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section Dispositif Électronique */}
+      <section id="dispositif" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+              Dispositif <span className="text-gradient">Électronique</span>
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
+              Découvrez nos capteurs intelligents et dispositifs électroniques installés sur le terrain pour surveiller les zones à risque.
+            </p>
+          </div>
+
+          {/* Collage photo avec images et vidéos */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {/* Image 1 - Grande */}
+            <div className="md:col-span-1 lg:col-span-2 md:row-span-2 group">
+              <div className="relative w-full h-full min-h-[300px] sm:min-h-[400px] rounded-2xl overflow-hidden shadow-xl hover-lift">
+                <Image
+                  src="/dispositif/IMG-20251007-WA0022.jpg"
+                  alt="Dispositif électronique Alerti 1"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+
+            {/* Vidéo 1 */}
+            <div className="md:col-span-1 group">
+              <div className="relative w-full h-full min-h-[250px] sm:min-h-[300px] rounded-2xl overflow-hidden shadow-xl hover-lift">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                >
+                  <source src="/dispositif/VID-20251007-WA0025.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 bg-black/70 rounded-full p-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Image 2 */}
+            <div className="md:col-span-1 group">
+              <div className="relative w-full h-full min-h-[250px] sm:min-h-[300px] rounded-2xl overflow-hidden shadow-xl hover-lift">
+                <Image
+                  src="/dispositif/IMG-20251007-WA0024.jpg"
+                  alt="Dispositif électronique Alerti 2"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+
+            {/* Vidéo 2 - Grande */}
+            <div className="md:col-span-2 lg:col-span-1 group">
+              <div className="relative w-full h-full min-h-[300px] sm:min-h-[400px] rounded-2xl overflow-hidden shadow-xl hover-lift">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                >
+                  <source src="/dispositif/VID-20251007-WA0025(1).mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-4 right-4 bg-black/70 rounded-full p-2">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Description du dispositif */}
+          <div className="mt-12 sm:mt-16 text-center">
+            <div className="bg-gradient-to-r from-[#014AAD] to-[#00D4FF] rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
+              <div className="relative z-10">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">Technologie IoT de pointe</h3>
+                <p className="text-base sm:text-lg opacity-90 max-w-3xl mx-auto">
+                  Nos capteurs intelligents sont installés dans les zones à haut risque pour mesurer en continu les niveaux d&apos;eau, 
+                  la pluviométrie et la vitesse d&apos;écoulement, permettant une surveillance 24h/24.
+                </p>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+            </div>
           </div>
         </div>
       </section>
