@@ -280,9 +280,33 @@ export default function Home() {
 
       {/* Section Héros moderne */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden hero-section">
-        {/* Fond moderne avec mesh gradient - animation optimisée */}
-        <div className="absolute inset-0 gradient-mesh" style={{animation: 'gradientShift 8s ease infinite'}}>
-          <div className="absolute inset-0 bg-black/40 transition-opacity duration-500"></div>
+        {/* Vidéos en arrière-plan */}
+        <div className="absolute inset-0 w-full h-full">
+          {/* Première vidéo */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/video/Gratuit Inondation Vidéo d'archives - (2 708 Telechargements Gratuit).mp4" type="video/mp4" />
+          </video>
+          
+          {/* Deuxième vidéo (superposée avec opacité pour effet de transition) */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-50"
+          >
+            <source src="/video/Inondation Stock Video Footage for Free Download.mp4" type="video/mp4" />
+          </video>
+          
+          {/* Overlay sombre pour améliorer la lisibilité du texte */}
+          <div className="absolute inset-0 bg-black/50 transition-opacity duration-500"></div>
+          
           {/* Effet de particules flottantes - optimisé */}
           <div className="absolute inset-0">
             {[...Array(6)].map((_, i) => (
@@ -327,9 +351,9 @@ export default function Home() {
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-4xl mx-auto font-light leading-relaxed px-4">
               Imaginez un Mali où chaque pluie ne serait plus une menace, mais une <span className="text-[#00D4FF] font-semibold">information utile</span>.
             </p>
-            <p className="text-sm sm:text-base lg:text-lg text-white/80 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
+            {/* <p className="text-sm sm:text-base lg:text-lg text-white/80 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
               Grâce à Alerti, les habitants des zones à risque reçoivent une alerte <span className="font-bold text-white">1 à 2 jours</span> avant une inondation prévue.
-            </p>
+            </p> */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
               <button
                 onClick={() => smoothScrollTo('comment-ca-marche')}
@@ -825,8 +849,8 @@ export default function Home() {
             <h3 className="text-2xl font-semibold mb-8">Nos partenaires</h3>
             <div className="flex justify-center items-center space-x-8 opacity-75">
               <div className="text-lg">Orange Digital Center</div>
-              <div className="w-px h-8 bg-white/50"></div>
-              <div className="text-lg">Marakadev</div>
+              {/* <div className="w-px h-8 bg-white/50"></div> */}
+              {/* <div className="text-lg">Marakadev</div> */}
             </div>
           </div>
         </div>
@@ -851,60 +875,46 @@ export default function Home() {
               {
                 name: "Mamadou Sylla",
                 role: "Développeur Full-Stack",
-                icon: (
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-                  </svg>
-                ),
-                gradient: "from-[#014AAD] to-[#00D4FF]"
+                image: "/team/mamadou.png",
+                // gradient: "from-[#014AAD] to-[#00D4FF]"
               },
               {
                 name: "Adama Sissoko",
                 role: "Développeur Web & Mobile",
-                icon: (
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
-                  </svg>
-                ),
-                gradient: "from-[#00D4FF] to-[#8B5CF6]"
+                image: "/team/adama.png",
+                // gradient: "from-[#00D4FF] to-[#8B5CF6]"
               },
               {
                 name: "Issa",
                 role: "L&apos;électronicien",
-                icon: (
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
-                  </svg>
-                ),
-                gradient: "from-[#8B5CF6] to-[#F54A4D]"
+                image: "/team/issa.png",
+                // gradient: "from-[#8B5CF6] to-[#F54A4D]"
               },
               {
                 name: "Mohamed Fane",
                 role: "Le Designer",
-                icon: (
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
-                  </svg>
-                ),
-                gradient: "from-[#F54A4D] to-[#014AAD]"
+                image: "/team/fane.png",
+                // gradient: "from-[#F54A4D] to-[#014AAD]"
               },
               {
                 name: "Fatoumata",
                 role: "Porteuse de projets",
-                icon: (
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.599 2.6c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                  </svg>
-                ),
-                gradient: "from-[#014AAD] to-[#F54A4D]"
+                image: "/team/fatoumata.png",
+                // gradient: "from-[#014AAD] to-[#F54A4D]"
               }
             ].map((member, index) => (
               <div key={index} className="group text-center hover-lift">
                 <div className="relative mb-6">
-                  <div className={`bg-gradient-to-br ${member.gradient} rounded-3xl w-32 h-32 mx-auto flex items-center justify-center shadow-2xl group-hover:shadow-xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2`}>
-                    {member.icon}
+                  <div className="bg-white rounded-3xl w-48 h-48 sm:w-52 sm:h-52 lg:w-56 lg:h-56 mx-auto flex items-center justify-center shadow-2xl group-hover:shadow-xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2 overflow-hidden p-2">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={224}
+                      height={224}
+                      className="w-full h-full object-contain rounded-3xl"
+                    />
                   </div>
-                  <div className={`absolute -inset-2 bg-gradient-to-br ${member.gradient} rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                  {/* <div className={`absolute -inset-2 bg-gradient-to-br ${member.gradient} rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div> */}
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#014AAD] transition-colors duration-300">{member.name}</h3>
                 <p className="text-sm text-gray-600 font-medium">{member.role}</p>
