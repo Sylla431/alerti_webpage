@@ -282,7 +282,9 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden hero-section">
         {/* Vidéos en arrière-plan */}
         <div className="absolute inset-0 w-full h-full">
-          {/* Première vidéo */}
+         
+          
+          {/* Vidéo principale */}
           <video
             autoPlay
             loop
@@ -290,22 +292,11 @@ export default function Home() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/video/Gratuit Inondation Vidéo d'archives - (2 708 Telechargements Gratuit).mp4" type="video/mp4" />
-          </video>
-          
-          {/* Deuxième vidéo (superposée avec opacité pour effet de transition) */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-50"
-          >
-            <source src="/video/Inondation Stock Video Footage for Free Download.mp4" type="video/mp4" />
+            <source src="/video/inondation.mp4" type="video/mp4" />
           </video>
           
           {/* Overlay sombre pour améliorer la lisibilité du texte */}
-          <div className="absolute inset-0 bg-black/50 transition-opacity duration-500"></div>
+          <div className="absolute inset-0 bg-black/30 transition-opacity duration-500"></div>
           
           {/* Effet de particules flottantes - optimisé */}
           <div className="absolute inset-0">
@@ -340,7 +331,7 @@ export default function Home() {
             <div className="relative mb-6 sm:mb-8">
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight relative">
                 <span className="relative z-10">Ensemble, anticipons</span>
-                <div className="absolute -inset-2 bg-gradient-to-r from-white/20 to-transparent rounded-xl blur-lg"></div>
+                {/* <div className="absolute -inset-2 bg-gradient-to-r from-white/20 to-transparent rounded-xl blur-lg"></div> */}
               </h1>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white relative">
                 <span className="text-gradient bg-gradient-to-r from-[#00D4FF] to-[#8B5CF6] bg-clip-text text-transparent animate-shimmer">
