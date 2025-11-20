@@ -141,7 +141,7 @@ export default function Home() {
   // Écran de chargement
   if (!isLoaded) {
   return (
-      <div className="fixed inset-0 bg-gradient-to-br from-[#014AAD] via-[#8B5CF6] to-[#F54A4D] flex items-center justify-center z-50">
+      <div className="fixed inset-0 bg-[#004AAD] flex items-center justify-center z-50">
         {/* Effet de particules en arrière-plan optimisé */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(8)].map((_, i) => (
@@ -187,7 +187,7 @@ export default function Home() {
           
           {/* Barre de progression animée */}
           <div className="w-72 h-2 bg-white/20 rounded-full mx-auto mt-8 overflow-hidden animate-fade-in-up">
-            <div className="h-full bg-gradient-to-r from-white/60 via-white to-white/60 rounded-full animate-pulse" style={{
+            <div className="h-full bg-white rounded-full animate-pulse" style={{
               animation: 'shimmer 2s ease-in-out infinite'
             }}></div>
           </div>
@@ -219,27 +219,27 @@ export default function Home() {
             {/* Menu desktop */}
             <div className="hidden lg:block">
               <div className="ml-10 flex items-center space-x-2">
-                <button onClick={() => smoothScrollTo('comment-ca-marche')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('comment-ca-marche')} className="relative text-gray-800 hover:text-[#004AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#004AAD]/10 group">
                   <span className="relative z-10">Comment ça marche</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-[#004AAD]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('fonctionnalites')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('fonctionnalites')} className="relative text-gray-800 hover:text-[#004AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#004AAD]/10 group">
                   <span className="relative z-10">Fonctionnalités</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-[#004AAD]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('dispositif')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('dispositif')} className="relative text-gray-800 hover:text-[#004AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#004AAD]/10 group">
                   <span className="relative z-10">Dispositif</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-[#004AAD]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('application')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('application')} className="relative text-gray-800 hover:text-[#004AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#004AAD]/10 group">
                   <span className="relative z-10">Application</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-[#004AAD]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('impact')} className="relative text-gray-800 hover:text-[#014AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#014AAD]/10 group">
+                <button onClick={() => smoothScrollTo('impact')} className="relative text-gray-800 hover:text-[#004AAD] px-3 lg:px-5 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 hover:bg-[#004AAD]/10 group">
                   <span className="relative z-10">Impact</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#F54A4D]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-[#004AAD]/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
-                <button onClick={() => smoothScrollTo('contact')} className="relative bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white px-4 lg:px-8 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
+                <button onClick={() => smoothScrollTo('contact')} className="relative bg-[#F54B4D] text-white px-4 lg:px-8 py-2 lg:py-3 rounded-full text-sm lg:text-base font-semibold hover:bg-[#d94345] hover:shadow-lg hover:scale-105 transition-all duration-300">
                   <span className="relative z-10">Contact</span>
                   <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
@@ -249,7 +249,7 @@ export default function Home() {
             {/* Bouton menu mobile */}
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-[#014AAD] hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-[#004AAD] hover:bg-gray-100 transition-colors"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
@@ -261,22 +261,22 @@ export default function Home() {
           {isMobileMenuOpen && (
             <div className="lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-md">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                <button onClick={() => {smoothScrollTo('comment-ca-marche'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                <button onClick={() => {smoothScrollTo('comment-ca-marche'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#004AAD] hover:bg-[#004AAD]/10 transition-colors">
                   Comment ça marche
                 </button>
-                <button onClick={() => {smoothScrollTo('fonctionnalites'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                <button onClick={() => {smoothScrollTo('fonctionnalites'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#004AAD] hover:bg-[#004AAD]/10 transition-colors">
                   Fonctionnalités
                 </button>
-                <button onClick={() => {smoothScrollTo('dispositif'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                <button onClick={() => {smoothScrollTo('dispositif'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#004AAD] hover:bg-[#004AAD]/10 transition-colors">
                   Dispositif
                 </button>
-                <button onClick={() => {smoothScrollTo('application'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                <button onClick={() => {smoothScrollTo('application'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#004AAD] hover:bg-[#004AAD]/10 transition-colors">
                   Application
                 </button>
-                <button onClick={() => {smoothScrollTo('impact'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#014AAD] hover:bg-[#014AAD]/10 transition-colors">
+                <button onClick={() => {smoothScrollTo('impact'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#004AAD] hover:bg-[#004AAD]/10 transition-colors">
                   Impact
                 </button>
-                <button onClick={() => {smoothScrollTo('contact'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white hover:shadow-lg transition-all duration-300">
+                <button onClick={() => {smoothScrollTo('contact'); setIsMobileMenuOpen(false);}} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium bg-[#F54B4D] text-white hover:bg-[#d94345] hover:shadow-lg transition-all duration-300">
                   Contact
                 </button>
               </div>
@@ -322,7 +322,7 @@ export default function Home() {
             {[...Array(4)].map((_, i) => (
               <div
                 key={`rain-${i}`}
-                className="absolute w-0.5 h-12 bg-gradient-to-b from-white/40 to-transparent optimized-pulse"
+                className="absolute w-0.5 h-12 bg-white/40 optimized-pulse"
                 style={{
                   left: `${Math.random() * 100}%`,
                   animation: `pulse ${2 + Math.random() * 1.5}s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
@@ -338,16 +338,15 @@ export default function Home() {
             <div className="relative mb-6 sm:mb-8">
               <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight relative">
                 <span className="relative z-10">Ensemble, anticipons</span>
-                {/* <div className="absolute -inset-2 bg-gradient-to-r from-white/20 to-transparent rounded-xl blur-lg"></div> */}
               </h1>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white relative">
-                <span className="text-gradient bg-gradient-to-r from-[#00D4FF] to-[#8B5CF6] bg-clip-text text-transparent animate-shimmer">
+                <span className="text-[#F54B4D]">
                   les inondations
                 </span>
               </h2>
             </div>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 max-w-4xl mx-auto font-light leading-relaxed px-4">
-              Imaginez un Mali où chaque pluie ne serait plus une menace, mais une <span className="text-[#00D4FF] font-semibold">information utile</span>.
+              Imaginez un Mali où chaque pluie ne serait plus une menace, mais une <span className="text-[#004AAD] font-semibold">information utile</span>.
             </p>
             {/* <p className="text-sm sm:text-base lg:text-lg text-white/80 mb-8 sm:mb-12 max-w-3xl mx-auto px-4">
               Grâce à Alerti, les habitants des zones à risque reçoivent une alerte <span className="font-bold text-white">1 à 2 jours</span> avant une inondation prévue.
@@ -355,7 +354,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
               <button
                 onClick={() => smoothScrollTo('comment-ca-marche')}
-                className="group relative bg-gradient-to-r from-[#F54A4D] to-[#8B5CF6] text-white font-semibold py-3 sm:py-4 lg:py-5 px-6 sm:px-8 lg:px-10 rounded-full text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#F54A4D]/30 w-full sm:w-auto"
+                className="group relative bg-[#F54B4D] text-white font-semibold py-3 sm:py-4 lg:py-5 px-6 sm:px-8 lg:px-10 rounded-full text-sm sm:text-base lg:text-lg transition-all duration-300 transform hover:scale-105 hover:bg-[#d94345] hover:shadow-2xl hover:shadow-[#F54B4D]/30 w-full sm:w-auto"
               >
                 <span className="relative z-10">Découvrir Alerti</span>
                 <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
@@ -365,7 +364,7 @@ export default function Home() {
                 className="group relative glass-morphism text-white font-semibold py-3 sm:py-4 lg:py-5 px-6 sm:px-8 lg:px-10 rounded-full text-sm sm:text-base lg:text-lg border border-white/30 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               >
                 <span className="relative z-10">Voir comment ça marche</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/20 to-[#00D4FF]/20 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
               </button>
             </div>
           </div>
@@ -378,18 +377,10 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Transition progressive vers la section suivante - optimisée */}
-        {/* <div 
-          className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-          style={{
-            background: 'linear-gradient(to top, rgba(249, 250, 251, 0.95), rgba(249, 250, 251, 0.7), transparent)',
-            transition: 'opacity 0.3s ease'
-          }}
-        ></div> */}
       </section>
 
       {/* Section Comment ça marche */}
-      <section id="comment-ca-marche" className="min-h-screen py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden">
+      <section id="comment-ca-marche" className="min-h-screen py-12 sm:py-16 lg:py-20 bg-white relative overflow-hidden">
         {/* Éléments décoratifs animés */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 w-16 h-16 bg-blue-200/20 rounded-full animate-float optimized-float"></div>
@@ -404,58 +395,58 @@ export default function Home() {
               Comment ça marche
             </h2>
             <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-              Chez Alerti, nous croyons qu&apos;<span className="font-bold text-[#014AAD]">une information reçue à temps peut sauver des vies</span>.
+              Chez Alerti, nous croyons qu&apos;<span className="font-bold text-[#004AAD]">une information reçue à temps peut sauver des vies</span>.
             </p>
           </div>
-          
+
 
           {/* Processus horizontal avec données animées */}
           <div className="relative">
             {/* Ligne de connexion avec données animées */}
             <div className="hidden lg:block absolute top-10 left-1/10 right-1/10 h-1 z-0">
               {/* Ligne de base */}
-              <div className="w-full h-full bg-gradient-to-r from-[#014AAD]/20 via-[#00D4FF]/20 via-[#8B5CF6]/20 via-[#F54A4D]/20 to-[#014AAD]/20"></div>
+            <div className="w-full h-full bg-[#004AAD]/20"></div>
               
               {/* Nœuds de connexion */}
               <div className="absolute inset-0">
                 {/* Nœud 1 */}
-                <div className="absolute top-0 left-1/5 w-2 h-2 bg-[#014AAD] rounded-full animate-pulse"></div>
+                 <div className="absolute top-0 left-1/5 w-2 h-2 bg-[#004AAD] rounded-full animate-pulse"></div>
                 {/* Nœud 2 */}
-                <div className="absolute top-0 left-2/5 w-2 h-2 bg-[#00D4FF] rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                 <div className="absolute top-0 left-2/5 w-2 h-2 bg-[#F54B4D] rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
                 {/* Nœud 3 */}
-                <div className="absolute top-0 left-3/5 w-2 h-2 bg-[#8B5CF6] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                 <div className="absolute top-0 left-3/5 w-2 h-2 bg-[#004AAD] rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
                 {/* Nœud 4 */}
-                <div className="absolute top-0 left-4/5 w-2 h-2 bg-[#F54A4D] rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                 <div className="absolute top-0 left-4/5 w-2 h-2 bg-[#F54B4D] rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
               </div>
               
               {/* Particules de données animées */}
               <div className="absolute inset-0 overflow-hidden">
                 {/* Particule 1 - Capteurs vers Cloud */}
-                <div className="absolute w-3 h-3 bg-[#014AAD] rounded-full animate-data-travel shadow-lg" style={{
+                 <div className="absolute w-3 h-3 bg-[#004AAD] rounded-full animate-data-travel shadow-lg" style={{
                   animationDelay: '0s',
                   animationDuration: '3s'
                 }}></div>
                 
                 {/* Particule 2 - Cloud vers IA */}
-                <div className="absolute w-3 h-3 bg-[#00D4FF] rounded-full animate-data-travel shadow-lg" style={{
+                 <div className="absolute w-3 h-3 bg-[#F54B4D] rounded-full animate-data-travel shadow-lg" style={{
                   animationDelay: '1s',
                   animationDuration: '3s'
                 }}></div>
                 
                 {/* Particule 3 - IA vers Alertes */}
-                <div className="absolute w-3 h-3 bg-[#8B5CF6] rounded-full animate-data-travel shadow-lg" style={{
+                 <div className="absolute w-3 h-3 bg-[#004AAD] rounded-full animate-data-travel shadow-lg" style={{
                   animationDelay: '2s',
                   animationDuration: '3s'
                 }}></div>
                 
                 {/* Particule 4 - Alertes vers Interface */}
-                <div className="absolute w-3 h-3 bg-[#F54A4D] rounded-full animate-data-travel shadow-lg" style={{
+                 <div className="absolute w-3 h-3 bg-[#F54B4D] rounded-full animate-data-travel shadow-lg" style={{
                   animationDelay: '3s',
                   animationDuration: '3s'
                 }}></div>
                 
                 {/* Particule 5 - Interface vers Capteurs (boucle) */}
-                <div className="absolute w-3 h-3 bg-[#014AAD] rounded-full animate-data-travel shadow-lg" style={{
+                 <div className="absolute w-3 h-3 bg-[#004AAD] rounded-full animate-data-travel shadow-lg" style={{
                   animationDelay: '4s',
                   animationDuration: '3s'
                 }}></div>
@@ -465,7 +456,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-center">
               {/* Étape 1 - Capteurs */}
               <div className="text-center group relative">
-                <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10">
+                <div className="bg-[#004AAD] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10">
                   <span className="text-white font-bold text-2xl">1</span>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">Capteurs</h3>
@@ -473,18 +464,18 @@ export default function Home() {
                   Surveillance continue des niveaux d&apos;eau et pluviométrie
                 </p>
                 <div className="mt-3">
-                  <svg className="w-10 h-10 mx-auto text-[#014AAD] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <rect x="3" y="4" width="18" height="12" rx="2" />
-                    <circle cx="8" cy="10" r="1" fill="currentColor" />
-                    <circle cx="12" cy="10" r="1" fill="currentColor" />
-                    <circle cx="16" cy="10" r="1" fill="currentColor" />
-                  </svg>
+                  <svg className="w-10 h-10 mx-auto text-[#004AAD] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                        <rect x="3" y="4" width="18" height="12" rx="2" />
+                        <circle cx="8" cy="10" r="1" fill="currentColor" />
+                        <circle cx="12" cy="10" r="1" fill="currentColor" />
+                        <circle cx="16" cy="10" r="1" fill="currentColor" />
+                      </svg>
+                    </div>
                 </div>
-              </div>
                 
               {/* Étape 2 - Cloud */}
               <div className="text-center group relative">
-                <div className="bg-gradient-to-br from-[#00D4FF] to-[#8B5CF6] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '1s'}}>
+                <div className="bg-[#F54B4D] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '1s'}}>
                   <span className="text-white font-bold text-2xl">2</span>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">Cloud AWS</h3>
@@ -492,7 +483,7 @@ export default function Home() {
                   Transmission et analyse automatique des données
                 </p>
                 <div className="mt-3">
-                  <svg className="w-10 h-10 mx-auto text-[#00D4FF] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <svg className="w-10 h-10 mx-auto text-[#F54B4D] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 12v6m0 0l-3-3m3 3l3-3" />
                     </svg>
@@ -501,7 +492,7 @@ export default function Home() {
               
               {/* Étape 3 - IA */}
               <div className="text-center group relative">
-                <div className="bg-gradient-to-br from-[#8B5CF6] to-[#F54A4D] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '2s'}}>
+                <div className="bg-[#004AAD] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '2s'}}>
                   <span className="text-white font-bold text-2xl">3</span>
               </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">IA & Météo</h3>
@@ -509,7 +500,7 @@ export default function Home() {
                   Calcul du risque d&apos;inondation par intelligence artificielle
                 </p>
                 <div className="mt-3">
-                  <svg className="w-10 h-10 mx-auto text-[#8B5CF6] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <svg className="w-10 h-10 mx-auto text-[#004AAD] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     </svg>
               </div>
@@ -517,7 +508,7 @@ export default function Home() {
 
             {/* Étape 4 - Alertes */}
               <div className="text-center group relative">
-                <div className="bg-gradient-to-br from-[#F54A4D] to-[#014AAD] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '3s'}}>
+                <div className="bg-[#F54B4D] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '3s'}}>
                   <span className="text-white font-bold text-2xl">4</span>
                   </div>
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">Alertes</h3>
@@ -525,7 +516,7 @@ export default function Home() {
                   SMS automatiques selon le niveau de risque détecté
                 </p>
                 <div className="mt-3">
-                  <svg className="w-10 h-10 mx-auto text-[#F54A4D] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <svg className="w-10 h-10 mx-auto text-[#F54B4D] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                 </svg>
               </div>
@@ -533,7 +524,7 @@ export default function Home() {
 
             {/* Étape 5 - Interface */}
             <div className="text-center group relative">
-              <div className="bg-gradient-to-br from-[#014AAD] to-[#00D4FF] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '4s'}}>
+              <div className="bg-[#004AAD] rounded-3xl w-20 h-20 mx-auto mb-4 flex items-center justify-center shadow-xl animate-pulse-rotate relative z-10" style={{animationDelay: '4s'}}>
                 <span className="text-white font-bold text-2xl">5</span>
               </div>
               <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3">Interface</h3>
@@ -541,31 +532,31 @@ export default function Home() {
                 Application mobile et dashboard web pour utilisateurs
               </p>
               <div className="mt-3">
-                <svg className="w-10 h-10 mx-auto text-[#014AAD] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <rect x="5" y="5" width="3" height="8" fill="currentColor" />
-                  <rect x="10" y="7" width="3" height="6" fill="currentColor" />
-                  <rect x="15" y="6" width="3" height="9" fill="currentColor" />
-                </svg>
+                <svg className="w-10 h-10 mx-auto text-[#004AAD] animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" />
+                      <rect x="5" y="5" width="3" height="8" fill="currentColor" />
+                      <rect x="10" y="7" width="3" height="6" fill="currentColor" />
+                      <rect x="15" y="6" width="3" height="9" fill="currentColor" />
+                    </svg>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
               
           {/* Flèches mobiles améliorées */}
           <div className="lg:hidden flex justify-center space-x-4 mt-8">
             {[...Array(4)].map((_, i) => (
               <div key={i} className="flex items-center">
-                <svg className="w-6 h-6 text-[#014AAD]/60 animate-arrow-pulse" fill="currentColor" viewBox="0 0 50 50" style={{animationDelay: `${i * 0.5}s`}}>
+                <svg className="w-6 h-6 text-[#004AAD]/60 animate-arrow-pulse" fill="currentColor" viewBox="0 0 50 50" style={{animationDelay: `${i * 0.5}s`}}>
                   <path d="M25 8 L25 32 L18 32 L25 42 L32 32 L25 32" />
                 </svg>
-                {i < 3 && <div className="w-8 h-0.5 bg-gradient-to-r from-[#014AAD]/40 to-[#00D4FF]/40 ml-2"></div>}
+                {i < 3 && <div className="w-8 h-0.5 bg-[#004AAD]/40 ml-2"></div>}
               </div>
             ))}
           </div>
 
           {/* Section finale compacte */}
           <div className="mt-8 text-center">
-            <div className="bg-gradient-to-r from-[#014AAD] to-[#00D4FF] rounded-2xl p-6 text-white relative overflow-hidden">
+            <div className="bg-[#004AAD] rounded-2xl p-6 text-white relative overflow-hidden">
               <div className="relative z-10">
                 <div className="flex items-center justify-center mb-3">
                   <svg className="w-8 h-8 mr-3 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
@@ -577,7 +568,7 @@ export default function Home() {
                   Système automatisé pour une surveillance continue des zones vulnérables
                 </p>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+              <div className="absolute inset-0 bg-white/10 animate-shimmer"></div>
             </div>
           </div>
         </div>
@@ -601,7 +592,7 @@ export default function Home() {
             {[
               {
                 icon: (
-                  <svg className="w-16 h-16 text-[#014AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-16 h-16 text-[#004AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                     <circle cx="12" cy="12" r="2" />
                   </svg>
@@ -611,7 +602,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-16 h-16 text-[#00D4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-16 h-16 text-[#F54B4D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
                 ),
@@ -620,7 +611,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-16 h-16 text-[#F54A4D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-16 h-16 text-[#F54B4D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                   </svg>
                 ),
@@ -629,7 +620,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-16 h-16 text-[#8B5CF6]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-16 h-16 text-[#004AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 ),
@@ -638,7 +629,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-16 h-16 text-[#014AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-16 h-16 text-[#004AAD]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
                   </svg>
                 ),
@@ -647,7 +638,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-16 h-16 text-[#00D4FF]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                  <svg className="w-16 h-16 text-[#F54B4D]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
                   </svg>
                 ),
@@ -656,13 +647,13 @@ export default function Home() {
               }
             ].map((feature, index) => (
               <div key={index} className="group relative bg-white rounded-2xl p-8 hover-lift border border-gray-100 overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#014AAD] via-[#00D4FF] to-[#8B5CF6] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                <div className="absolute top-0 left-0 w-full h-1 bg-[#004AAD] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 <div className="relative z-10">
                   <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300 flex justify-center">{feature.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#014AAD] transition-colors duration-300">{feature.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-[#004AAD] transition-colors duration-300">{feature.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-[#014AAD]/5 to-[#00D4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-[#004AAD]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>
@@ -670,11 +661,11 @@ export default function Home() {
       </section>
 
       {/* Section Dispositif Électronique */}
-      <section id="dispositif" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white relative">
+      <section id="dispositif" className="py-12 sm:py-16 lg:py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-              Dispositif <span className="text-gradient">Électronique</span>
+              Dispositif <span className="text-[#F54B4D]">Électronique</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Découvrez nos capteurs intelligents et dispositifs électroniques installés sur le terrain pour surveiller les zones à risque.
@@ -693,7 +684,7 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div> */}
 
@@ -709,7 +700,7 @@ export default function Home() {
                 >
                   <source src="/dispositif/VID-20251007-WA0025.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-4 right-4 bg-black/70 rounded-full p-2">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
@@ -727,7 +718,7 @@ export default function Home() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div> */}
 
@@ -743,7 +734,7 @@ export default function Home() {
                 >
                   <source src="/dispositif/VID-20251007-WA0025(1).mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-4 right-4 bg-black/70 rounded-full p-2">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
@@ -763,7 +754,7 @@ export default function Home() {
                 >
                   <source src="/dispositif/VID-20251028-WA0021(1).mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute top-4 right-4 bg-black/70 rounded-full p-2">
                   <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
@@ -777,7 +768,7 @@ export default function Home() {
 
           {/* Description du dispositif */}
           <div className="mt-12 sm:mt-16 text-center">
-            <div className="bg-gradient-to-r from-[#014AAD] to-[#00D4FF] rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
+            <div className="bg-[#004AAD] rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden">
               <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl font-bold mb-4">Technologie IoT de pointe</h3>
                 <p className="text-base sm:text-lg opacity-90 max-w-3xl mx-auto">
@@ -785,7 +776,7 @@ export default function Home() {
                   la pluviométrie et la vitesse d&apos;écoulement, permettant une surveillance 24h/24.
                 </p>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+              <div className="absolute inset-0 bg-white/10 animate-shimmer"></div>
             </div>
           </div>
         </div>
@@ -796,7 +787,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-              Application <span className="text-gradient">Mobile Alerti</span>
+              Application <span className="text-[#F54B4D]">Mobile Alerti</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Découvrez l&apos;application mobile Alerti qui permet aux utilisateurs de recevoir des alertes en temps réel et de visualiser les zones à risque.
@@ -828,7 +819,7 @@ export default function Home() {
                     {/* Frame iPhone */}
                     <div className="relative w-56 sm:w-64 lg:w-72 h-[500px] sm:h-[550px] lg:h-[600px] mx-auto transform group-hover:scale-105 transition-transform duration-300 overflow-hidden rounded-[2rem] sm:rounded-[2.5rem]">
                     {/* iPhone Frame */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[2.5rem] p-3 shadow-2xl overflow-hidden">
+                    <div className="absolute inset-0 bg-gray-900 rounded-[2.5rem] p-3 shadow-2xl overflow-hidden">
                       {/* Bordure intérieure */}
                       <div className="w-full h-full bg-gray-900 rounded-[2rem] p-1 overflow-hidden">
                         <div className="w-full h-full bg-white rounded-[1.8rem] overflow-hidden relative">
@@ -858,7 +849,7 @@ export default function Home() {
                     </div>
 
                     {/* Effet de brillance */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 via-transparent to-transparent pointer-events-none rounded-[2.5rem] overflow-hidden"></div>
+                    <div className="absolute inset-0 bg-white/10 pointer-events-none rounded-[2.5rem] overflow-hidden"></div>
                     </div>
                   </div>
                 </div>
@@ -868,9 +859,9 @@ export default function Home() {
             {/* Indicateur de scroll */}
             <div className="text-center mt-6 sm:mt-8">
               <div className="flex items-center justify-center space-x-2 sm:space-x-4 px-4">
-                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse hidden sm:block"></div>
+                <div className="w-2 h-2 bg-[#004AAD] rounded-full animate-pulse hidden sm:block"></div>
                 <p className="text-gray-500 text-xs sm:text-sm font-medium text-center">← Faites défiler horizontalement pour voir toutes les captures d&apos;écran →</p>
-                <div className="w-2 h-2 bg-[#014AAD] rounded-full animate-pulse hidden sm:block"></div>
+                <div className="w-2 h-2 bg-[#004AAD] rounded-full animate-pulse hidden sm:block"></div>
               </div>
             </div>
           </div>
@@ -881,7 +872,7 @@ export default function Home() {
               href="https://drive.google.com/file/d/1sNUYZ4Nn1xuYD0jBDY7yQ86fisIVZ7HY/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center bg-gradient-to-r from-[#014AAD] to-[#00D4FF] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-[#014AAD]/30"
+              className="group relative inline-flex items-center bg-[#004AAD] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:bg-[#003b8a] hover:shadow-2xl hover:shadow-[#004AAD]/30"
             >
               <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -897,7 +888,7 @@ export default function Home() {
           {/* Description des fonctionnalités de l'app */}
           <div className="mt-16 grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-[#014AAD] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#004AAD] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-5 5v-5z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c-2.4 0-4.333 1.9-4.333 4.25v3.25l-2 1.546a2 2 0 00-.667 1.5v1a2 2 0 002 2h10a2 2 0 002-2v-1a2 2 0 00-.667-1.5l-2-1.546V6.25C13.333 3.9 11.4 2 12 2z" />
@@ -907,7 +898,7 @@ export default function Home() {
               <p className="text-gray-600">Notifications instantanées sur votre téléphone</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-[#00D4FF] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#F54B4D] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m0 0L9 7" />
                 </svg>
@@ -916,7 +907,7 @@ export default function Home() {
               <p className="text-gray-600">Visualisez les zones à risque en temps réel</p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-[#8B5CF6] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#004AAD] rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
@@ -929,7 +920,7 @@ export default function Home() {
       </section>
 
       {/* Section Impact & Résultats */}
-      <section id="impact" className="py-20 bg-gradient-to-r from-[#014AAD] to-[#F54A4D] text-white">
+      <section id="impact" className="py-20 bg-[#004AAD] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -977,15 +968,14 @@ export default function Home() {
       </section>
 
       {/* Section Équipe moderne */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/5 to-[#00D4FF]/5"></div>
+      <section className="py-20 bg-white relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Notre <span className="text-gradient">Équipe</span>
+              Notre <span className="text-[#F54B4D]">Équipe</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Une initiative portée par de <span className="font-semibold text-[#014AAD]">jeunes innovateurs maliens</span> engagés pour la sécurité des populations.
+              Une initiative portée par de <span className="font-semibold text-[#004AAD]">jeunes innovateurs maliens</span> engagés pour la sécurité des populations.
             </p>
           </div>
 
@@ -995,32 +985,27 @@ export default function Home() {
               {
                 name: "Mamadou Sylla",
                 role: "Développeur Full-Stack",
-                image: "/team/mamadou.png",
-                // gradient: "from-[#014AAD] to-[#00D4FF]"
+                image: "/team/mamadou.png"
               },
               {
                 name: "Adama Sissoko",
                 role: "Développeur Web & Mobile",
-                image: "/team/adama.png",
-                // gradient: "from-[#00D4FF] to-[#8B5CF6]"
+                image: "/team/adama.png"
               },
               {
                 name: "Issa",
                 role: "Electronicien",
-                image: "/team/issa.png",
-                // gradient: "from-[#8B5CF6] to-[#F54A4D]"
+                image: "/team/issa.png"
               },
               {
                 name: "Mohamed Fane",
                 role: "Le Designer",
-                image: "/team/fane.png",
-                // gradient: "from-[#F54A4D] to-[#014AAD]"
+                image: "/team/fane.png"
               },
               {
                 name: "Fatoumata",
                 role: "Porteuse de projets",
-                image: "/team/fatoumata.png",
-                // gradient: "from-[#014AAD] to-[#F54A4D]"
+                image: "/team/fatoumata.png"
               }
             ].map((member, index) => (
               <div key={index} className="group text-center hover-lift">
@@ -1034,9 +1019,8 @@ export default function Home() {
                       className="w-full h-[130%] object-cover object-top rounded-3xl"
                     />
                   </div>
-                  {/* <div className={`absolute -inset-2 bg-gradient-to-br ${member.gradient} rounded-3xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div> */}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#014AAD] transition-colors duration-300">{member.name}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#004AAD] transition-colors duration-300">{member.name}</h3>
                 <p className="text-sm text-gray-600 font-medium">{member.role}</p>
               </div>
             ))}
@@ -1067,9 +1051,9 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100 overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#014AAD]/10 to-[#00D4FF]/10 rounded-full -mr-16 -mt-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-[#8B5CF6]/10 to-[#F54A4D]/10 rounded-full -ml-12 -mb-12"></div>
+          <div className="relative bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100 overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#004AAD]/10 rounded-full -mr-16 -mt-16"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#F54B4D]/10 rounded-full -ml-12 -mb-12"></div>
 
             <form onSubmit={handleSubmit} className="relative z-10 space-y-8">
               <div className="grid md:grid-cols-2 gap-8">
@@ -1083,7 +1067,7 @@ export default function Home() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900"
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#004AAD]/20 focus:border-[#004AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900"
                     placeholder="Votre nom"
                   />
                 </div>
@@ -1097,7 +1081,7 @@ export default function Home() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900"
+                    className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#004AAD]/20 focus:border-[#004AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900"
                     placeholder="votre@email.com"
                   />
                 </div>
@@ -1112,7 +1096,7 @@ export default function Home() {
                   rows={6}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#014AAD]/20 focus:border-[#014AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900 resize-none"
+                  className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-4 focus:ring-[#004AAD]/20 focus:border-[#004AAD] transition-all duration-300 bg-white/80 backdrop-blur-sm placeholder:text-gray-400 text-gray-900 resize-none"
                   placeholder="Votre message..."
                 />
               </div>
@@ -1135,7 +1119,7 @@ export default function Home() {
                   className={`group relative ${
                     isSubmitting 
                       ? 'bg-gray-400 cursor-not-allowed' 
-                      : 'bg-gradient-to-r from-[#014AAD] to-[#00D4FF] hover:from-[#003d8a] hover:to-[#00B8E6] hover:scale-105 hover:shadow-2xl hover:shadow-[#014AAD]/30'
+                      : 'bg-[#004AAD] hover:bg-[#003b8a] hover:scale-105 hover:shadow-2xl hover:shadow-[#004AAD]/30'
                   } text-white font-bold py-5 px-12 rounded-full text-lg transition-all duration-300 transform overflow-hidden`}
                 >
                   <span className="relative z-10 flex items-center justify-center space-x-2">
@@ -1162,7 +1146,7 @@ export default function Home() {
           {/* Informations de contact */}
           <div className="mt-12 text-center">
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-gray-600">
-              <a href="mailto:alertino25@gmail.com" className="hover:text-[#014AAD] transition-colors flex items-center">
+              <a href="mailto:alertino25@gmail.com" className="hover:text-[#004AAD] transition-colors flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.93V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l7-4.666M21 19l-7-4.666M3 10.93V19m7-7.07V19" />
                 </svg>
@@ -1185,8 +1169,7 @@ export default function Home() {
       </section>
 
       {/* Footer moderne */}
-      <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-12 sm:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#014AAD]/10 to-[#00D4FF]/10"></div>
+      <footer className="relative bg-[#0f172a] text-white py-12 sm:py-16 overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="relative inline-block mb-6 sm:mb-8">
@@ -1202,9 +1185,9 @@ export default function Home() {
             </div>
             <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 font-light px-4">L&apos;alerte qui sauve des vies</p>
             <div className="flex justify-center items-center space-x-3 sm:space-x-4 mb-6 sm:mb-8">
-              <div className="w-8 sm:w-12 h-px bg-gradient-to-r from-transparent to-[#014AAD]"></div>
-              <span className="text-[#00D4FF] text-xl sm:text-2xl">🇲🇱</span>
-              <div className="w-8 sm:w-12 h-px bg-gradient-to-l from-transparent to-[#014AAD]"></div>
+              <div className="w-8 sm:w-12 h-px bg-[#004AAD]"></div>
+              <span className="text-[#004AAD] text-xl sm:text-2xl">🇲🇱</span>
+              <div className="w-8 sm:w-12 h-px bg-[#004AAD]"></div>
             </div>
             <div className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto px-4">
               © 2024 Alerti. Tous droits réservés. | Prévention des inondations au Mali<br />
@@ -1217,7 +1200,7 @@ export default function Home() {
           {[...Array(6)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-1 h-1 bg-[#00D4FF]/30 rounded-full animate-pulse-slow optimized-pulse"
+              className="absolute w-1 h-1 bg-[#004AAD]/30 rounded-full animate-pulse-slow optimized-pulse"
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,

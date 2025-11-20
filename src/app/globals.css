@@ -3,12 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --alerti-blue: #014AAD;
-  --alerti-red: #F54A4D;
-  --alerti-light-blue: #E3F2FD;
+  --alerti-blue: #004AAD;
+  --alerti-red: #F54B4D;
   --alerti-gray: #F5F5F5;
-  --alerti-cyan: #00D4FF;
-  --alerti-purple: #8B5CF6;
   --glass-bg: rgba(255, 255, 255, 0.1);
   --glass-border: rgba(255, 255, 255, 0.2);
 }
@@ -57,37 +54,23 @@ body {
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(1, 74, 173, 0.3);
+    box-shadow: 0 0 20px rgba(0, 74, 173, 0.3);
   }
   50% {
-    box-shadow: 0 0 40px rgba(1, 74, 173, 0.6);
+    box-shadow: 0 0 40px rgba(0, 74, 173, 0.6);
   }
 }
 
 @keyframes shimmer {
   0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% 50%;
+    opacity: 0.3;
   }
   50% {
-    background-position: 100% 50%;
+    opacity: 0.9;
   }
-}
-
-/* Optimisation pour le gradient mesh */
-.gradient-mesh {
-  will-change: background-position;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  100% {
+    opacity: 0.3;
+  }
 }
 
 @keyframes pulseAndRotate {
@@ -161,14 +144,8 @@ body {
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation: shimmer 2s ease-in-out infinite;
 }
 
 .animate-pulse-rotate {
@@ -194,43 +171,6 @@ body {
   border: 1px solid var(--glass-border);
 }
 
-.neon-border {
-  position: relative;
-}
-
-.neon-border::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  padding: 2px;
-  background: linear-gradient(45deg, var(--alerti-blue), var(--alerti-cyan), var(--alerti-purple));
-  border-radius: inherit;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: xor;
-  -webkit-mask-composite: xor;
-}
-
-/* Gradients modernes */
-.gradient-alerti {
-  background: linear-gradient(135deg, var(--alerti-blue) 0%, var(--alerti-red) 100%);
-}
-
-.gradient-cyber {
-  background: linear-gradient(45deg, var(--alerti-blue), var(--alerti-cyan), var(--alerti-purple), var(--alerti-red));
-}
-
-.gradient-mesh {
-  background: 
-    radial-gradient(at 40% 20%, var(--alerti-blue) 0px, transparent 50%),
-    radial-gradient(at 80% 0%, var(--alerti-purple) 0px, transparent 50%),
-    radial-gradient(at 0% 50%, var(--alerti-cyan) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, var(--alerti-red) 0px, transparent 50%),
-    radial-gradient(at 0% 100%, var(--alerti-blue) 0px, transparent 50%),
-    radial-gradient(at 80% 100%, var(--alerti-purple) 0px, transparent 50%),
-    radial-gradient(at 0% 0%, var(--alerti-cyan) 0px, transparent 50%),
-    radial-gradient(at 80% 50%, var(--alerti-red) 0px, transparent 50%);
-}
-
 /* Effets hover modernes */
 .hover-lift {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -239,13 +179,6 @@ body {
 .hover-lift:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--alerti-blue), var(--alerti-red));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* Masquer la scrollbar pour le carousel */
