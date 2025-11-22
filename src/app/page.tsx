@@ -985,7 +985,7 @@ export default function Home() {
               {
                 name: "Mamadou Sylla",
                 role: "Développeur Full-Stack",
-                image: "/team/mamadou.png"
+                image: "/team/#"
               },
               {
                 name: "Adama Sissoko",
