@@ -967,77 +967,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section Équipe moderne */}
-      {/* <section className="py-20 bg-white relative overflow-hidden"> */}
-        {/* <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Notre <span className="text-[#F54B4D]">Équipe</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Une initiative portée par de <span className="font-semibold text-[#004AAD]">jeunes innovateurs maliens</span> engagés pour la sécurité des populations.
-            </p>
-          </div>
-
-          {/* Grille des 5 membres de l'équipe */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
-            {[
-              {
-                name: "Mamadou Sylla",
-                role: "Développeur Full-Stack",
-                image: "/team/#"
-              },
-              {
-                name: "Adama Sissoko",
-                role: "Développeur Web & Mobile",
-                image: "/team/adama.png"
-              },
-              {
-                name: "Issa",
-                role: "Electronicien",
-                image: "/team/issa.png"
-              },
-              {
-                name: "Mohamed Fane",
-                role: "Le Designer",
-                image: "/team/fane.png"
-              },
-              {
-                name: "Fatoumata",
-                role: "Porteuse de projets",
-                image: "/team/fatoumata.png"
-              }
-            ].map((member, index) => (
-              <div key={index} className="group text-center hover-lift">
-                <div className="relative mb-6">
-                  <div className="bg-white rounded-3xl w-48 h-48 sm:w-52 sm:h-52 lg:w-56 lg:h-56 mx-auto flex items-start justify-center shadow-2xl group-hover:shadow-xl transition-all duration-500 transform group-hover:scale-105 group-hover:rotate-2 overflow-hidden p-2">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={224}
-                      height={224}
-                      className="w-full h-[130%] object-cover object-top rounded-3xl"
-                    />
-                  </div>
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#004AAD] transition-colors duration-300">{member.name}</h3>
-                <p className="text-sm text-gray-600 font-medium">{member.role}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Badge de l'équipe */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center space-x-3 bg-white rounded-full px-8 py-4 shadow-lg border border-gray-100">
-              <div className="text-3xl">🇲🇱</div>
-              <div className="text-left">
-                <div className="text-lg font-bold text-gray-900">Équipe Alerti</div>
-                <div className="text-sm text-gray-600">5 jeunes développeurs maliens passionnés</div>
-              </div>
-            </div>
-          </div>
-        {/* </div> */}
-      {/* </section> */}
+   
 
       {/* Section Contact */}
       <section id="contact" className="py-20 bg-white">
