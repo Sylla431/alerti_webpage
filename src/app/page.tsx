@@ -968,8 +968,8 @@ export default function Home() {
       </section>
 
       {/* Section Équipe moderne */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* <section className="py-20 bg-white relative overflow-hidden"> */}
+        {/* <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Notre <span className="text-[#F54B4D]">Équipe</span>
@@ -1036,8 +1036,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        {/* </div> */}
+      {/* </section> */}
 
       {/* Section Contact */}
       <section id="contact" className="py-20 bg-white">
