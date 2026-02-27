@@ -122,7 +122,7 @@ export default function Home() {
         // Attendre que les styles CSS soient appliqués et que les animations soient prêtes
         await new Promise(resolve => {
           // Forcer un reflow pour s'assurer que les styles sont appliqués
-          document.body.offsetHeight;
+          document.body.getBoundingClientRect();
           setTimeout(resolve, 200);
         });
         
@@ -1122,6 +1122,15 @@ export default function Home() {
             <div className="text-gray-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto px-4">
               © 2024 Alerti. Tous droits réservés. | Prévention des inondations au Mali<br />
               <span className="text-gray-500">Innovation technologique au service de la sécurité publique</span>
+            </div>
+
+            <div className="mt-6 flex items-center justify-center gap-6 text-sm">
+              <a
+                href="/privacy-policy"
+                className="text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+              >
+                Politique de confidentialité
+              </a>
             </div>
           </div>
         </div>
