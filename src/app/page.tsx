@@ -869,7 +869,7 @@ export default function Home() {
           {/* Bouton de téléchargement de l'app */}
           <div className="mt-12 text-center">
             <a
-              href="https://drive.google.com/file/d/1sNUYZ4Nn1xuYD0jBDY7yQ86fisIVZ7HY/view?usp=sharing"
+              href="https://drive.google.com/file/d/1hrXeM-5KMZMMcxihbVYTcq9KlhgadUHy/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center bg-[#004AAD] text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 hover:bg-[#003b8a] hover:shadow-2xl hover:shadow-[#004AAD]/30"
