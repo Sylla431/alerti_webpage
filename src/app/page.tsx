@@ -1124,12 +1124,21 @@ export default function Home() {
               <span className="text-gray-500">Innovation technologique au service de la sécurité publique</span>
             </div>
 
-            <div className="mt-6 flex items-center justify-center gap-6 text-sm">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
               <a
                 href="/privacy-policy"
                 className="text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
               >
                 Politique de confidentialité
+              </a>
+              <span className="hidden sm:inline text-gray-600" aria-hidden>
+                |
+              </span>
+              <a
+                href="/privacy-policy#demande-suppression"
+                className="text-gray-300 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white"
+              >
+                Supprimer mon compte et mes données
               </a>
             </div>
           </div>

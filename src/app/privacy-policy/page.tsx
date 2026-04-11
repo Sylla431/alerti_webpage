@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+/** Prérempli pour les demandes de suppression de compte (stores / RGPD). */
+const ACCOUNT_DELETION_MAILTO = `mailto:alertino25@gmail.com?subject=${encodeURIComponent(
+  "Demande de suppression de compte Alerti",
+)}&body=${encodeURIComponent(
+  "Bonjour,\n\nJe souhaite que mon compte Alerti et les données personnelles associées soient supprimés.\n\nAdresse e-mail ou identifiant du compte :\n\nCordialement",
+)}`;
+
 export const metadata: Metadata = {
   title: "Politique de confidentialité | Alerti",
   description:
@@ -60,7 +67,7 @@ export default function PrivacyPolicyPage() {
               <a href="mailto:alertino25@gmail.com">alertino25@gmail.com</a>
             </li>
             <li>
-              <strong>Téléphone</strong> : [à compléter]
+              <strong>Téléphone</strong> : +223 99 96 17 61
             </li>
           </ul>
           <p>
@@ -222,6 +229,27 @@ export default function PrivacyPolicyPage() {
             Toute demande peut être adressée à :{" "}
             <a href="mailto:alertino25@gmail.com">alertino25@gmail.com</a>
           </p>
+
+          <div
+            id="demande-suppression"
+            className="mt-8 scroll-mt-24 rounded-2xl border-2 border-[#004AAD]/30 bg-[#004AAD]/10 p-6 sm:p-8"
+          >
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+              Suppression de compte et des données associées
+            </h3>
+            <p className="mt-3 text-gray-800">
+              Vous pouvez demander la suppression définitive de votre compte Alerti et des données
+              personnelles liées à ce compte. Utilisez le lien ci-dessous : un message prérempli
+              s’ouvrira dans votre messagerie ; complétez votre identifiant ou e-mail de compte
+              avant d’envoyer.
+            </p>
+            <a
+              href={ACCOUNT_DELETION_MAILTO}
+              className="mt-5 inline-flex items-center justify-center rounded-full bg-[#F54B4D] px-6 py-3 text-base font-bold text-white hover:bg-[#d84042] transition-colors"
+            >
+              Demander la suppression de mon compte et de mes données
+            </a>
+          </div>
 
           <h2 className="mt-8 text-xl sm:text-2xl font-semibold text-gray-900">
             11. Modification de la politique
