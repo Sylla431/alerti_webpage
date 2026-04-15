@@ -83,7 +83,9 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>L’infrastructure technique utilise notamment :</p>
           <ul className="list-disc list-inside space-y-1">
-          
+            <li>
+              <strong>Backend Spring</strong> (authentification et gestion des comptes utilisateurs)
+            </li>
             <li>
               <strong>HiveMQ</strong> (communication des capteurs via protocole MQTT)
             </li>
@@ -149,15 +151,26 @@ export default function PrivacyPolicyPage() {
             6. Partage des données
           </h2>
           <p>
-            Les données peuvent être partagées uniquement avec des prestataires techniques nécessaires au
-            fonctionnement du service :
+            Les données sont partagées uniquement lorsque c’est nécessaire au fonctionnement du service,
+            et uniquement avec des prestataires techniques :
           </p>
           <ul className="list-disc list-inside space-y-1">
-            <li>Google Firebase</li>
-            <li>HiveMQ</li>
-            <li>Prestataires d’envoi de SMS</li>
+            <li>
+              <strong>Backend Spring</strong> : pour l’authentification et la gestion du compte
+              (nom/prénom, numéro de téléphone).
+            </li>
+            <li>
+              <strong>HiveMQ</strong> : pour la communication technique liée aux alertes inondation.
+            </li>
+            <li>
+              <strong>Prestataires SMS</strong> : pour l’envoi des alertes d’urgence (numéro de
+              téléphone et informations de localité nécessaires à l’alerte).
+            </li>
           </ul>
-          <p>Ces prestataires sont soumis à des obligations de confidentialité et de sécurité.</p>
+          <p>
+            Ces prestataires sont soumis à des obligations de confidentialité et de sécurité, et ne
+            peuvent pas utiliser vos données pour d’autres finalités.
+          </p>
           <p>Aucune donnée n’est utilisée à des fins publicitaires.</p>
 
           <h2 className="mt-8 text-xl sm:text-2xl font-semibold text-gray-900">
