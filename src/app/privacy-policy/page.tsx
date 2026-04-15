@@ -83,9 +83,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>L’infrastructure technique utilise notamment :</p>
           <ul className="list-disc list-inside space-y-1">
-            <li>
-              <strong>Google Firebase</strong> (authentification, base de données, notifications push)
-            </li>
+          
             <li>
               <strong>HiveMQ</strong> (communication des capteurs via protocole MQTT)
             </li>
@@ -99,46 +97,25 @@ export default function PrivacyPolicyPage() {
           </h3>
           <ul className="list-disc list-inside space-y-1">
             <li>Nom et prénom</li>
-            <li>Adresse e-mail</li>
             <li>Numéro de téléphone</li>
-            <li>Mot de passe (chiffré)</li>
-            <li>Identifiant utilisateur</li>
           </ul>
+          <p>
+            Ces données sont utilisées uniquement pour l’authentification et la gestion du compte
+            utilisateur.
+          </p>
 
           <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-900">
-            3.2 Données de localisation (obligatoires)
+            3.2 Données de localisation (localité)
           </h3>
-          <p>La localisation GPS est requise pour :</p>
+          <p>La localité est requise pour :</p>
           <ul className="list-disc list-inside space-y-1">
             <li>Déterminer la zone géographique à risque</li>
             <li>Envoyer des alertes adaptées à la position de l’utilisateur</li>
             <li>Garantir la pertinence des notifications d’urgence</li>
           </ul>
           <p>
-            La désactivation de la localisation empêche l’utilisation complète du service.
+            L’absence de localité empêche l’utilisation complète du service.
           </p>
-
-          <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-900">
-            3.3 Données techniques
-          </h3>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Adresse IP</li>
-            <li>Type d’appareil</li>
-            <li>Système d’exploitation</li>
-            <li>Logs techniques</li>
-            <li>Données liées aux notifications</li>
-          </ul>
-
-          <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-900">
-            3.4 Données issues des capteurs
-          </h3>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Niveau d’eau</li>
-            <li>Données environnementales</li>
-            <li>Horodatage</li>
-            <li>Identifiant du capteur</li>
-          </ul>
-          <p>Ces données ne sont pas des données personnelles.</p>
 
           <h2 className="mt-8 text-xl sm:text-2xl font-semibold text-gray-900">
             4. Finalités du traitement
@@ -150,7 +127,6 @@ export default function PrivacyPolicyPage() {
             <li>Envoyer des SMS d’urgence</li>
             <li>Gérer les comptes utilisateurs</li>
             <li>Améliorer le système d’alerte</li>
-            <li>Assurer la sécurité et la stabilité technique</li>
           </ul>
           <p>Aucune donnée n’est vendue à des tiers.</p>
 
@@ -198,7 +174,7 @@ export default function PrivacyPolicyPage() {
           <p>Les mesures de sécurité incluent notamment :</p>
           <ul className="list-disc list-inside space-y-1">
             <li>Chiffrement des communications (HTTPS / TLS)</li>
-            <li>Mots de passe chiffrés</li>
+            <li>Protection des données d’identification et de localité</li>
             <li>Accès restreint aux administrateurs</li>
             <li>Sauvegardes sécurisées</li>
             <li>Surveillance des accès</li>
@@ -209,10 +185,7 @@ export default function PrivacyPolicyPage() {
           </h2>
           <ul className="list-disc list-inside space-y-1">
             <li>Données de compte : conservées tant que le compte est actif</li>
-            <li>Données techniques : conservées selon nécessité opérationnelle</li>
-            <li>
-              Données capteurs : conservées à des fins statistiques et d’amélioration du service
-            </li>
+            <li>Localité : conservée selon nécessité opérationnelle pour l’alerte</li>
           </ul>
 
           <h2 className="mt-8 text-xl sm:text-2xl font-semibold text-gray-900">
