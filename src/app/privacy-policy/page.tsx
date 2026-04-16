@@ -109,14 +109,10 @@ export default function PrivacyPolicyPage() {
           <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-900">
             3.2 Données de localisation (localité)
           </h3>
-          <p>La localité est requise pour :</p>
-          <ul className="list-disc list-inside space-y-1">
-            <li>Déterminer la zone géographique à risque</li>
-            <li>Envoyer des alertes adaptées à la position de l’utilisateur</li>
-            <li>Garantir la pertinence des notifications d’urgence</li>
-          </ul>
           <p>
-            L’absence de localité empêche l’utilisation complète du service.
+            Nous n’utilisons pas les données de localisation des utilisateurs. Aucune géolocalisation
+            (GPS) n’est collectée ni exploitée pour l’envoi des alertes. Les alertes sont envoyées à tous
+            les utilisateurs de l’application, indépendamment de leur position.
           </p>
 
           <h2 className="mt-8 text-xl sm:text-2xl font-semibold text-gray-900">
