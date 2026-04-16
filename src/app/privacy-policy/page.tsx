@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-900">
-            3.2 Données de localisation (localité)
+            3.2 Données de localisation
           </h3>
           <p>
             Nous n’utilisons pas les données de localisation des utilisateurs. Aucune géolocalisation
@@ -160,7 +160,7 @@ export default function PrivacyPolicyPage() {
             </li>
             <li>
               <strong>Prestataires SMS</strong> : pour l’envoi des alertes d’urgence (numéro de
-              téléphone et informations de localité nécessaires à l’alerte).
+              téléphone).
             </li>
           </ul>
           <p>
@@ -183,7 +183,7 @@ export default function PrivacyPolicyPage() {
           <p>Les mesures de sécurité incluent notamment :</p>
           <ul className="list-disc list-inside space-y-1">
             <li>Chiffrement des communications (HTTPS / TLS)</li>
-            <li>Protection des données d’identification et de localité</li>
+            <li>Protection des données d’identification (nom/prénom, numéro de téléphone)</li>
             <li>Accès restreint aux administrateurs</li>
             <li>Sauvegardes sécurisées</li>
             <li>Surveillance des accès</li>
@@ -194,7 +194,10 @@ export default function PrivacyPolicyPage() {
           </h2>
           <ul className="list-disc list-inside space-y-1">
             <li>Données de compte : conservées tant que le compte est actif</li>
-            <li>Localité : conservée selon nécessité opérationnelle pour l’alerte</li>
+            <li>
+              Données d’authentification (nom/prénom, numéro de téléphone) : conservées selon nécessité
+              opérationnelle et obligations légales
+            </li>
           </ul>
 
           <h2 className="mt-8 text-xl sm:text-2xl font-semibold text-gray-900">
